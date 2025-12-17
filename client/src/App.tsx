@@ -4,13 +4,32 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import Home from "@/pages/home";
+import SolutionsIndex from "@/pages/solutions/index";
+import SmartCuttingPage from "@/pages/solutions/cutting";
+import RuggedAMRPage from "@/pages/solutions/amr";
+import AIBrainPage from "@/pages/solutions/ai-brain";
+import PipelinePage from "@/pages/solutions/pipeline";
+import ProductsPage from "@/pages/products";
+import CasesPage from "@/pages/cases";
+import ResourcesPage from "@/pages/resources";
+import AboutPage from "@/pages/about";
+import ContactPage from "@/pages/contact";
 
 function Router() {
   return (
     <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
+      <Route path="/" component={Home} />
+      <Route path="/solutions" component={SolutionsIndex} />
+      <Route path="/solutions/cutting" component={SmartCuttingPage} />
+      <Route path="/solutions/amr" component={RuggedAMRPage} />
+      <Route path="/solutions/ai-brain" component={AIBrainPage} />
+      <Route path="/solutions/pipeline" component={PipelinePage} />
+      <Route path="/products" component={ProductsPage} />
+      <Route path="/cases" component={CasesPage} />
+      <Route path="/resources" component={ResourcesPage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );
