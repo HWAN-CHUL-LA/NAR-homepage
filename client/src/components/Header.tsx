@@ -73,7 +73,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4 h-16 lg:h-20">
           <Link href="/" data-testid="link-home">
             <span className="text-xl lg:text-2xl font-bold tracking-tight">
-              ROBOTICS
+             NeoArcRobotics
             </span>
           </Link>
 
@@ -148,7 +148,7 @@ export default function Header() {
             <SheetContent side="right" className="w-full sm:w-80 p-0">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
-                  <span className="text-xl font-bold">ROBOTICS</span>
+                  <span className="text-xl font-bold">NeoArcRobotics</span>
                 </div>
                 <nav className="flex-1 overflow-auto p-4">
                   <div className="space-y-1">

@@ -73,7 +73,7 @@ export default function HeroSection() {
                 className="text-white/80 font-semibold text-sm lg:text-base"
                 data-testid="partner-posco"
               >
-                POSCO
+              
               </div>
             </div>
           </div>

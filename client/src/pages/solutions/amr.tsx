@@ -4,7 +4,8 @@ import SolutionPageHero from "@/components/SolutionPageHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Bot, Move, Mountain, Target, Truck, Package } from "lucide-react";
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png";
+
+const amrVideo = "https://res.cloudinary.com/dzu2wygbi/video/upload/v1766025867/%EC%9E%90%EA%B8%B0%EC%9C%84%EC%B9%98%EC%B6%94%EC%A0%95_%ED%85%8C%EC%8A%A4%ED%8A%B8_ydk62r.mp4";
 
 const features = [
   {
@@ -54,7 +55,7 @@ export default function RuggedAMRPage() {
             "자동 도킹: 거리/비전 센서 기반 정렬로 목표 위치에 정밀 접근",
             "확장형 상부 모듈: 운반 대상에 맞춘 탑모듈/지그/거치대 연동",
           ]}
-          image={amrImage}
+          video={amrVideo}
           icon={Bot}
           ctaText="현장 바닥/동선 기반 적용 진단 요청"
         />

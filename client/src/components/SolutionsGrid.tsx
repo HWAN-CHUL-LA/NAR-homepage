@@ -1,9 +1,10 @@
 import SolutionCard from "./SolutionCard";
 import { Cpu, Bot, Cog, GitBranch } from "lucide-react";
 import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png";
 import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
 import pipelineImage from "@assets/generated_images/automated_steel_production_pipeline.png";
+
+const amrImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/mainAMR.jpg";
 
 // todo: remove mock functionality - replace with API data
 const solutions = [

@@ -8,7 +8,8 @@ interface SolutionPageHeroProps {
   headline: string;
   subheadline: string;
   benefits: string[];
-  image: string;
+  image?: string;
+  video?: string;
   icon: LucideIcon;
   ctaText?: string;
   ctaHref?: string;
@@ -21,6 +22,7 @@ export default function SolutionPageHero({
   subheadline,
   benefits,
   image,
+  video,
   icon: Icon,
   ctaText = "상담 신청",
   ctaHref = "/contact",
@@ -82,11 +84,22 @@ export default function SolutionPageHero({
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
+              {video ? (
+                <video
+                  src={video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/10 rounded-lg -z-10" />
           </div>
