@@ -4,7 +4,8 @@ import SolutionPageHero from "@/components/SolutionPageHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Cpu, Zap, Target, Repeat, Settings, Shield, BarChart } from "lucide-react";
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
+
+const cuttingVideo = "https://res.cloudinary.com/dzu2wygbi/video/upload/형강절단로봇_최종본_zd8na3.mov";
 
 const features = [
   {
@@ -46,16 +47,16 @@ export default function SmartCuttingPage() {
       <Header />
       <main>
         <SolutionPageHero
-          title="Smart Cutting System"
-          headline="형강을 올려놓기만 하면, 절단부터 배출까지 한 번에."
-          subheadline="2D(Flat Bar)부터 3D(H-Beam·파이프·앵글·부등변앵글)까지, 설계 도면 기준으로 원스톱 절단 자동화를 제공합니다. Laser / Plasma 두 가지 절단 에너지 옵션을 보유하고, 현장에 맞는 최적 구성을 제안합니다."
+          title="플라즈마 / 레이저 형강 절단 토탈 시스템"
+          headline="소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 구축."
+          subheadline="2D(Flat Bar)부터 3D(H-Beam·파이프·앵글·부등변앵글)형상 자재까지, 설계 도면 기준으로 원스톱 절단 자동화를 제공합니다. Laser / Plasma 두 가지 절단 에너지 옵션을 보유하고, 현장에 맞는 최적 구성을 제안합니다."
           benefits={[
-            "One-Stop 자동화: 인입 → 정렬/보정 → 절단 → 배출/잔재 처리까지 무인 흐름 설계",
+            "One-Stop 자동화: 인입 → 정렬/보정 → 절단 → 배출/잔재 처리까지 자동화 구축",
             "2D+3D 통합 대응: 다양한 형강 소재/형상에 대한 적용 범위 확장",
-            "정밀 보정 기반 절단: 휨/비틀림 등 비정형 변수를 반영해 기준점을 보정",
-            "현장 검증 레퍼런스: HD현대중공업, 한화오션 납품 및 운용 경험 기반",
+            "정밀 보정 기반 절단: 실 자재의 휨/비틀림 등을 센싱 기술로 감지하여 기준점을 보정",
+            "현장 검증 레퍼런스: HD현대중공업, 한화오션 등 대기업 납품 및 운용 경험 기반",
           ]}
-          image={cuttingImage}
+          video={cuttingVideo}
           icon={Cpu}
           ctaText="현장 적용 상담 받기"
         />

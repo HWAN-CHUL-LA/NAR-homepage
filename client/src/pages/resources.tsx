@@ -4,7 +4,6 @@ import ResourceCard from "@/components/ResourceCard";
 import CTASection from "@/components/CTASection";
 import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
 import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png";
-import pipelineImage from "@assets/generated_images/automated_steel_production_pipeline.png";
 import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
 
 // todo: remove mock functionality - replace with API data
@@ -19,20 +18,12 @@ const resources = {
       thumbnail: cuttingImage,
     },
     {
-      title: "Rugged Omni AMR 브로슈어",
+      title: "산업현장 특화형 Omnidirectional AMR 브로슈어",
       description:
         "산업현장 특화형 AMR의 기술 사양과 적용 가능 시나리오를 소개합니다.",
       type: "brochure" as const,
       fileSize: "PDF 3.8MB",
       thumbnail: amrImage,
-    },
-    {
-      title: "Unmanned Pipeline 소개서",
-      description:
-        "토탈 무인 자동화 파이프라인의 구성과 단계별 도입 패키지를 안내합니다.",
-      type: "brochure" as const,
-      fileSize: "PDF 5.1MB",
-      thumbnail: pipelineImage,
     },
     {
       title: "AI Brain Robot 기술 소개",
@@ -50,7 +41,7 @@ const resources = {
         "형강 인입부터 절단, 배출까지 무인 운영 과정을 보여주는 데모 영상입니다.",
       type: "video" as const,
       duration: "3:45",
-      thumbnail: cuttingImage,
+      videoUrl: "https://res.cloudinary.com/dzu2wygbi/video/upload/형강절단로봇_최종본_zd8na3.mov",
     },
     {
       title: "Rugged AMR 주행 테스트",
@@ -66,7 +57,7 @@ const resources = {
         "HD현대중공업 담당자가 들려주는 스마트 절단 시스템 도입 후기입니다.",
       type: "video" as const,
       duration: "5:12",
-      thumbnail: pipelineImage,
+      thumbnail: cuttingImage,
     },
   ],
   specs: [

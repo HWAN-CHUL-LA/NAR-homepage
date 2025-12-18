@@ -4,9 +4,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const footerLinks = {
   solutions: [
     { label: "Smart Cutting System", href: "/solutions/cutting" },
-    { label: "Rugged Omni AMR", href: "/solutions/amr" },
+    { label: "산업현장 특화형 Omnidirectional AMR", href: "/solutions/amr" },
     { label: "AI Brain Robot", href: "/solutions/ai-brain" },
-    { label: "Unmanned Pipeline", href: "/solutions/pipeline" },
   ],
   products: [
     { label: "Cutting System Products", href: "/products#cutting" },

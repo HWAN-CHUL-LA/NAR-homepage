@@ -41,9 +41,8 @@ type FormData = z.infer<typeof formSchema>;
 
 const solutions = [
   { value: "cutting", label: "Smart Cutting System" },
-  { value: "amr", label: "Rugged Omni AMR" },
+  { value: "amr", label: "산업현장 특화형 Omnidirectional AMR" },
   { value: "ai-brain", label: "AI Brain Robot" },
-  { value: "pipeline", label: "Unmanned Pipeline" },
   { value: "other", label: "기타 / 통합 솔루션" },
 ];
 

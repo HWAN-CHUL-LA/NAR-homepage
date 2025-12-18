@@ -3,40 +3,38 @@ import { Button } from "@/components/ui/button";
 import CaseStudyCard from "./CaseStudyCard";
 import { ArrowRight } from "lucide-react";
 import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png";
-import pipelineImage from "@assets/generated_images/automated_steel_production_pipeline.png";
 
 // todo: remove mock functionality - replace with API data
 const caseStudies = [
   {
-    id: "hd-hyundai-cutting",
-    title: "형강 절단 라인 무인화 구축",
+    id: "hd-hyundai-scrap-clamping",
+    title: "형강 끝단부 정밀 가공을 위한 스마트 보조 배출 시스템",
     client: "HD현대중공업",
     industry: "조선",
-    solution: "Smart Cutting",
-    challenge: "기존 수동 절단 공정의 생산성 한계와 안전 위험 요소 존재",
-    result: "절단 생산성 40% 향상, 품질 불량률 85% 감소",
+    solution: "Auxiliary Clamping",
+    challenge: "인입 푸셔의 고정 한계 구간에서 소재 떨림 발생, 끝단부 가공 정밀도 저하",
+    result: "잔재부 가공 오차 0.5mm 이내 달성, 자재 수율 극대화",
     image: cuttingImage,
   },
   {
-    id: "hanwha-amr",
-    title: "조선소 고철 운반 자동화",
+    id: "hanwha-plasma-50m-install",
+    title: "국내 최대 50m 초장축 형강 플라즈마 절단 라인 구축",
     client: "한화오션",
     industry: "조선",
-    solution: "Rugged AMR",
-    challenge: "비정형 바닥 환경에서의 중량물 이송 자동화 필요",
-    result: "이송 인력 60% 절감, 24시간 무인 운영 실현",
-    image: amrImage,
+    solution: "Mega-Scale Plasma",
+    challenge: "초대형 선박 블록 생산을 위한 50m 장축 자재의 원스톱 가공 인프라 확보",
+    result: "국내 최대 길이(50m) 가공 설비 구축 및 대형 자재 양산 체계 완성",
+    image: cuttingImage,
   },
   {
-    id: "posco-pipeline",
-    title: "철강 가공 라인 통합 자동화",
-    client: "POSCO 계열사",
-    industry: "철강",
-    solution: "Unmanned Pipeline",
-    challenge: "공정 간 단절로 인한 물류 병목 및 품질 추적 어려움",
-    result: "전체 라인 택트타임 30% 단축, 실시간 품질 추적 구현",
-    image: pipelineImage,
+    id: "sme-custom-solution",
+    title: "중소 제조 현장 맞춤형 형강 절단 장비 및 전용 SW 구축",
+    client: "중소 형강 가공 전문기업 B사",
+    industry: "철강 가공",
+    solution: "Custom Cutting System",
+    challenge: "기성품 장비의 높은 도입 장벽과 현장 맞춤형 기능 부재",
+    result: "현장 요구사항 100% 반영, 비숙련자 운용 효율 극대화",
+    image: cuttingImage,
   },
 ];
 

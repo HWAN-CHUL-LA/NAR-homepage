@@ -10,6 +10,7 @@ interface ResourceCardProps {
   fileSize?: string;
   duration?: string;
   thumbnail?: string;
+  videoUrl?: string;
   onDownload?: () => void;
   onView?: () => void;
 }
@@ -28,6 +29,7 @@ export default function ResourceCard({
   fileSize,
   duration,
   thumbnail,
+  videoUrl,
   onDownload,
   onView,
 }: ResourceCardProps) {
@@ -40,7 +42,16 @@ export default function ResourceCard({
       data-testid={`resource-${title.toLowerCase().replace(/\s/g, "-")}`}
     >
       <div className="aspect-video bg-muted rounded-t-md flex items-center justify-center relative overflow-hidden">
-        {thumbnail ? (
+        {videoUrl ? (
+          <video
+            src={videoUrl}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          />
+        ) : thumbnail ? (
           <img
             src={thumbnail}
             alt={title}
@@ -49,7 +60,7 @@ export default function ResourceCard({
         ) : (
           <Icon className="w-12 h-12 text-muted-foreground" />
         )}
-        {type === "video" && (
+        {type === "video" && !videoUrl && (
           <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
             <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
               <Play className="w-6 h-6 text-foreground ml-1" />

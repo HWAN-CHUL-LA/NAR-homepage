@@ -1,17 +1,16 @@
 import SolutionCard from "./SolutionCard";
-import { Cpu, Bot, Cog, GitBranch } from "lucide-react";
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
+import { Cpu, Bot, Cog } from "lucide-react";
 import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
-import pipelineImage from "@assets/generated_images/automated_steel_production_pipeline.png";
 
+const cuttingImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766044887/%ED%98%95%EA%B0%95%EC%A0%88%EB%8B%A8%EC%9E%A5%EB%B9%84%EC%82%AC%EC%A7%841_mvj532.jpg";
 const amrImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/mainAMR.jpg";
 
 // todo: remove mock functionality - replace with API data
 const solutions = [
   {
-    title: "Smart Cutting System",
+    title: "플라즈마 / 레이저 형강 절단 토탈 시스템",
     description:
-      "형강을 올려놓기만 하면, 절단부터 배출까지 한 번에. 2D부터 3D까지 원스톱 절단 자동화를 제공합니다.",
+      "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현하다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공합니다.",
     features: [
       "One-Stop 자동화: 인입→절단→배출까지 무인 흐름",
       "2D+3D 통합 대응: 다양한 형강 소재/형상 적용",
@@ -22,9 +21,9 @@ const solutions = [
     image: cuttingImage,
   },
   {
-    title: "Rugged Omni AMR",
+    title: "산업현장 특화형 Omnidirectional AMR",
     description:
-      "울퉁불퉁한 산업 바닥에서도, 전방향으로 정확하게 움직이는 AMR. 험지 대응 설계와 자동 도킹 기능을 제공합니다.",
+      "어떤 바닥 조건에서도 흔들림 없이. 전방향으로 움직이는 산업현장형 AMR 로봇. 험지 대응 설계와 자동 도킹 기능을 제공합니다.",
     features: [
       "전방향 주행/제자리 회전: Swerve Drive 기반",
       "험지 대응 설계: Rocker-Bogie 샤시 탑재",
@@ -35,7 +34,7 @@ const solutions = [
     image: amrImage,
   },
   {
-    title: "AI Brain Robot",
+    title: "AI 용접 자동화 솔루션",
     description:
       "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다.",
     features: [
@@ -46,19 +45,6 @@ const solutions = [
     icon: Cog,
     href: "/solutions/ai-brain",
     image: aiImage,
-  },
-  {
-    title: "Unmanned Pipeline",
-    description:
-      "절단부터 이송, 그리고 차세대 용접 자동화까지. 공정을 하나로 연결하는 토탈 무인 자동화 파이프라인입니다.",
-    features: [
-      "단계별 자동화: 인입→절단→배출→이송",
-      "통합 운영: 라인/물류/품질 추적 관리",
-      "확장 로드맵: AI 기반 용접 자동화",
-    ],
-    icon: GitBranch,
-    href: "/solutions/pipeline",
-    image: pipelineImage,
   },
 ];
 

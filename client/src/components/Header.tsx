@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Cpu, Bot, Cog, GitBranch, ChevronDown } from "lucide-react";
+import { Menu, X, Cpu, Bot, Cog, ChevronDown } from "lucide-react";
 
 const solutions = [
   {
@@ -20,7 +20,7 @@ const solutions = [
     href: "/solutions/cutting",
   },
   {
-    title: "Rugged Omni AMR",
+    title: "산업현장 특화형 Omnidirectional AMR",
     description: "산업현장 특화형 AMR",
     icon: Bot,
     href: "/solutions/amr",
@@ -30,12 +30,6 @@ const solutions = [
     description: "Physical-AI 기반 자동화",
     icon: Cog,
     href: "/solutions/ai-brain",
-  },
-  {
-    title: "Unmanned Pipeline",
-    description: "토탈 무인 자동화 파이프라인",
-    icon: GitBranch,
-    href: "/solutions/pipeline",
   },
 ];
 

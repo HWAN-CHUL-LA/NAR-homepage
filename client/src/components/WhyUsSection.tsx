@@ -35,11 +35,13 @@ export default function WhyUsSection() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            왜 ROBOTICS인가?
+            왜 NeoArcRobotics인가?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            15년 이상의 기술 개발과 현장 적용 경험을 바탕으로
-            신뢰할 수 있는 자동화 파트너십을 제공합니다
+            **"속도와 신뢰, 결과로 증명하기 때문입니다."**<br/>
+            설립 1년 만에 AMR 핵심 기술 특허 3건 확보 및 주행 플랫폼 개발 완료. 
+            그리고 HD현대중공업, 한화오션 등 글로벌 Top-tier 기업이 선택한 형강 가공 솔루션까지. 
+            네오아크로보틱스는 압도적인 기술 실행력으로 귀사의 가장 확실한 자동화 파트너가 되겠습니다.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

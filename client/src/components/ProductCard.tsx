@@ -1,7 +1,8 @@
+import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, Eye } from "lucide-react";
+import { Download, Eye, Play } from "lucide-react";
 
 interface ProductCardProps {
   name: string;
@@ -9,6 +10,8 @@ interface ProductCardProps {
   description: string;
   specs: string[];
   image?: string;
+  videoUrl?: string;
+  productId?: string;
   isComingSoon?: boolean;
   onViewDetails?: () => void;
   onDownloadSpec?: () => void;
@@ -20,6 +23,8 @@ export default function ProductCard({
   description,
   specs,
   image,
+  videoUrl,
+  productId,
   isComingSoon = false,
   onViewDetails,
   onDownloadSpec,
@@ -30,7 +35,22 @@ export default function ProductCard({
       data-testid={`product-${name.toLowerCase().replace(/\s/g, "-")}`}
     >
       <div className="aspect-square bg-muted rounded-t-md flex items-center justify-center relative overflow-hidden">
-        {image ? (
+        {videoUrl ? (
+          <>
+            <video
+              src={videoUrl}
+              muted
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
+                <Play className="w-5 h-5 text-foreground ml-0.5" />
+              </div>
+            </div>
+          </>
+        ) : image ? (
           <img src={image} alt={name} className="w-full h-full object-cover" />
         ) : (
           <div className="text-muted-foreground text-sm">이미지 준비중</div>
@@ -56,27 +76,39 @@ export default function ProductCard({
           ))}
         </ul>
         <div className="flex gap-2">
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 gap-1"
-            onClick={() => {
-              onViewDetails?.();
-              console.log(`View details: ${name}`);
-            }}
-            disabled={isComingSoon}
-            data-testid={`button-view-${name.toLowerCase().replace(/\s/g, "-")}`}
-          >
-            <Eye className="w-3 h-3" />
-            상세
-          </Button>
+          {productId && !isComingSoon ? (
+            <Link href={`/products/${productId}`} className="flex-1">
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full gap-1"
+                data-testid={`button-view-${name.toLowerCase().replace(/\s/g, "-")}`}
+              >
+                <Eye className="w-3 h-3" />
+                상세
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1 gap-1"
+              onClick={() => {
+                onViewDetails?.();
+              }}
+              disabled={isComingSoon}
+              data-testid={`button-view-${name.toLowerCase().replace(/\s/g, "-")}`}
+            >
+              <Eye className="w-3 h-3" />
+              상세
+            </Button>
+          )}
           <Button
             variant="outline"
             size="sm"
             className="flex-1 gap-1"
             onClick={() => {
               onDownloadSpec?.();
-              console.log(`Download spec: ${name}`);
             }}
             disabled={isComingSoon}
             data-testid={`button-download-${name.toLowerCase().replace(/\s/g, "-")}`}

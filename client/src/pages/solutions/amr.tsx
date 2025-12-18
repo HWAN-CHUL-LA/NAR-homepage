@@ -46,8 +46,8 @@ export default function RuggedAMRPage() {
       <Header />
       <main>
         <SolutionPageHero
-          title="Rugged Omni AMR"
-          headline="울퉁불퉁한 산업 바닥에서도, 전방향으로 정확하게 움직이는 AMR."
+          title="산업현장 특화형 Omnidirectional AMR"
+          headline="어떤 바닥 조건에서도 흔들림 없이. 전방향으로 움직이는 산업현장형 AMR 로봇."
           subheadline="Swerve Drive 기반 전방향(Omnidirectional) 이동과 제자리 회전, 그리고 Rocker-Bogie 샤시로 비정형 바닥 환경에서도 안정 주행을 목표로 설계했습니다. 자율주행 이후 정밀 자동 도킹까지 연결해 현장 물류를 자동화합니다."
           benefits={[
             "전방향 주행/제자리 회전: 조향+주행 일체형 구동 모듈 기반",

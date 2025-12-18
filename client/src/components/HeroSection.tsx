@@ -55,7 +55,7 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/20">
-            <p className="text-sm text-white/60 mb-4">신뢰할 수 있는 파트너</p>
+            <p className="text-sm text-white/60 mb-4">주요 고객사</p>
             <div className="flex flex-wrap items-center gap-8">
               <div
                 className="text-white/80 font-semibold text-sm lg:text-base"
