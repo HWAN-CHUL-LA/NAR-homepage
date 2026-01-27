@@ -1,0 +1,936 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/layout/basic/css/main.css)-->
+
+<style>
+/* ========================================
+   NeoArcRobotics 커스텀 스타일
+   카페24 스마트디자인용
+   ======================================== */
+
+/* 색상 변수 */
+:root {
+  --neo-primary: #2563eb;
+  --neo-primary-dark: #1d4ed8;
+  --neo-primary-light: #3b82f6;
+  --neo-text: #1f2937;
+  --neo-text-light: #6b7280;
+  --neo-text-muted: #9ca3af;
+  --neo-bg: #f9fafb;
+  --neo-bg-card: #f3f4f6;
+  --neo-white: #ffffff;
+  --neo-border: #e5e7eb;
+}
+
+/* 기본 스타일 리셋 */
+.neo-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1024px) {
+  .neo-container {
+    padding: 0 32px;
+  }
+}
+
+/* ========================================
+   히어로 섹션
+   ======================================== */
+.neo-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-image: url('https://ecimg.cafe24img.com/pg1727b95312806034/neoarcrobotics/web/assets/shipyard_industrial_facility_exterior-C6O3LYx2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.neo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+}
+
+.neo-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 96px 0;
+}
+
+.neo-hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .neo-hero h1 {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .neo-hero h1 {
+    font-size: 60px;
+  }
+}
+
+.neo-hero h1 span {
+  color: var(--neo-primary-light);
+}
+
+.neo-hero p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 640px;
+}
+
+@media (min-width: 1024px) {
+  .neo-hero p {
+    font-size: 20px;
+  }
+}
+
+.neo-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.neo-btn-primary {
+  background: var(--neo-primary);
+  color: #ffffff;
+}
+
+.neo-btn-primary:hover {
+  background: var(--neo-primary-dark);
+}
+
+.neo-btn-outline {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(4px);
+}
+
+.neo-btn-outline:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.neo-hero-partners {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.neo-hero-partners p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+}
+
+.neo-partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.neo-partner-logos span {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+}
+
+@media (min-width: 1024px) {
+  .neo-partner-logos span {
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   통계 섹션
+   ======================================== */
+.neo-stats {
+  padding: 64px 0;
+  background: var(--neo-bg-card);
+}
+
+@media (min-width: 1024px) {
+  .neo-stats {
+    padding: 80px 0;
+  }
+}
+
+.neo-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .neo-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.neo-stat-card {
+  background: var(--neo-white);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.neo-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--neo-primary);
+  margin-bottom: 8px;
+}
+
+@media (min-width: 1024px) {
+  .neo-stat-value {
+    font-size: 40px;
+  }
+}
+
+.neo-stat-label {
+  font-size: 14px;
+  color: var(--neo-text-light);
+}
+
+/* ========================================
+   솔루션 섹션
+   ======================================== */
+.neo-solutions {
+  padding: 64px 0;
+}
+
+@media (min-width: 1024px) {
+  .neo-solutions {
+    padding: 96px 0;
+  }
+}
+
+.neo-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.neo-section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--neo-text);
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .neo-section-header h2 {
+    font-size: 36px;
+  }
+}
+
+.neo-section-header p {
+  font-size: 18px;
+  color: var(--neo-text-light);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.neo-solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .neo-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.neo-solution-card {
+  background: var(--neo-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.neo-solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.neo-solution-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.neo-solution-content {
+  padding: 24px;
+}
+
+.neo-solution-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.neo-solution-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--neo-primary);
+}
+
+.neo-solution-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--neo-text);
+  margin-bottom: 12px;
+}
+
+.neo-solution-card > .neo-solution-content > p {
+  font-size: 15px;
+  color: var(--neo-text-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.neo-solution-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.neo-solution-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--neo-text-light);
+  margin-bottom: 8px;
+}
+
+.neo-solution-features li::before {
+  content: '✓';
+  color: var(--neo-primary);
+  font-weight: bold;
+}
+
+.neo-solution-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neo-primary);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.neo-solution-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   적용사례 섹션
+   ======================================== */
+.neo-cases {
+  padding: 64px 0;
+}
+
+@media (min-width: 1024px) {
+  .neo-cases {
+    padding: 96px 0;
+  }
+}
+
+.neo-cases-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .neo-cases-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.neo-cases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .neo-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .neo-cases-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.neo-case-card {
+  background: var(--neo-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.neo-case-card:hover {
+  transform: translateY(-4px);
+}
+
+.neo-case-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.neo-case-content {
+  padding: 24px;
+}
+
+.neo-case-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--neo-primary);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.neo-case-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--neo-text);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.neo-case-client {
+  font-size: 14px;
+  color: var(--neo-text-light);
+  margin-bottom: 12px;
+}
+
+.neo-case-result {
+  font-size: 14px;
+  color: var(--neo-text-muted);
+  line-height: 1.5;
+}
+
+/* ========================================
+   왜 우리를 선택? 섹션
+   ======================================== */
+.neo-whyus {
+  padding: 64px 0;
+  background: var(--neo-bg-card);
+}
+
+@media (min-width: 1024px) {
+  .neo-whyus {
+    padding: 96px 0;
+  }
+}
+
+.neo-whyus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .neo-whyus-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .neo-whyus-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.neo-reason-card {
+  background: var(--neo-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.neo-reason-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.neo-reason-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--neo-primary);
+}
+
+.neo-reason-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--neo-text);
+  margin-bottom: 8px;
+}
+
+.neo-reason-card p {
+  font-size: 14px;
+  color: var(--neo-text-light);
+  line-height: 1.6;
+}
+
+/* ========================================
+   CTA 섹션
+   ======================================== */
+.neo-cta {
+  padding: 64px 0;
+}
+
+@media (min-width: 1024px) {
+  .neo-cta {
+    padding: 96px 0;
+  }
+}
+
+.neo-cta-box {
+  background: var(--neo-primary);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .neo-cta-box {
+    padding: 64px 48px;
+  }
+}
+
+.neo-cta-box h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .neo-cta-box h2 {
+    font-size: 30px;
+  }
+}
+
+.neo-cta-box p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 32px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.neo-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.neo-btn-secondary {
+  background: var(--neo-white);
+  color: var(--neo-primary);
+}
+
+.neo-btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+.neo-btn-outline-light {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.neo-btn-outline-light:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* ========================================
+   SVG 아이콘
+   ======================================== */
+.neo-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ========================================
+   반응형 유틸리티
+   ======================================== */
+.neo-hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .neo-hide-mobile {
+    display: block;
+  }
+}
+
+.neo-hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .neo-hide-desktop {
+    display: none;
+  }
+}
+</style>
+
+<!-- ========================================
+     히어로 섹션
+     ======================================== -->
+<section class="neo-hero">
+  <div class="neo-container">
+    <div class="neo-hero-content">
+      <h1>
+        조선·철강 제조 혁신을 위한<br>
+        <span>토탈 자동화 솔루션</span>
+      </h1>
+      <p>
+        형강 절단부터 자율 이송, 그리고 차세대 AI 기반 용접 자동화까지.
+        HD현대중공업, 한화오션에서 검증된 기술력으로 현장을 혁신합니다.
+      </p>
+      <div class="neo-hero-buttons">
+        <a href="/board/contact.html" class="neo-btn neo-btn-primary">
+          데모 요청
+          <svg class="neo-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/category/솔루션/25/" class="neo-btn neo-btn-outline">
+          <svg class="neo-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          솔루션 둘러보기
+        </a>
+      </div>
+      <div class="neo-hero-partners">
+        <p>주요 고객사</p>
+        <div class="neo-partner-logos">
+          <span>HD현대중공업</span>
+          <span>한화오션</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     통계 섹션
+     ======================================== -->
+<section class="neo-stats">
+  <div class="neo-container">
+    <div class="neo-stats-grid">
+      <div class="neo-stat-card">
+        <div class="neo-stat-value">15+</div>
+        <div class="neo-stat-label">년간 기술 개발</div>
+      </div>
+      <div class="neo-stat-card">
+        <div class="neo-stat-value">50+</div>
+        <div class="neo-stat-label">특허 및 SW 등록</div>
+      </div>
+      <div class="neo-stat-card">
+        <div class="neo-stat-value">99.2%</div>
+        <div class="neo-stat-label">절단 정밀도</div>
+      </div>
+      <div class="neo-stat-card">
+        <div class="neo-stat-value">24/7</div>
+        <div class="neo-stat-label">무인 운영 실현</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     솔루션 섹션
+     ======================================== -->
+<section class="neo-solutions">
+  <div class="neo-container">
+    <div class="neo-section-header">
+      <h2>검증된 자동화 솔루션</h2>
+      <p>조선·철강 현장에 최적화된 핵심 솔루션으로 생산성을 혁신합니다</p>
+    </div>
+    
+    <div class="neo-solutions-grid">
+      <!-- 솔루션 1: 형강 절단 -->
+      <div class="neo-solution-card">
+        <img src="https://res.cloudinary.com/dzu2wygbi/image/upload/v1766044887/%ED%98%95%EA%B0%95%EC%A0%88%EB%8B%A8%EC%9E%A5%EB%B9%84%EC%82%AC%EC%A7%841_mvj532.jpg" alt="형강 절단 시스템" class="neo-solution-image">
+        <div class="neo-solution-content">
+          <div class="neo-solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
+            </svg>
+          </div>
+          <h3>플라즈마 / 레이저 형강 절단 토탈 시스템</h3>
+          <p>소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현하다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공합니다.</p>
+          <ul class="neo-solution-features">
+            <li>One-Stop 자동화: 인입→절단→배출까지 무인 흐름</li>
+            <li>2D+3D 통합 대응: 다양한 형강 소재/형상 적용</li>
+            <li>정밀 보정 기반 절단: 휨/비틀림 변수 반영</li>
+          </ul>
+          <a href="/category/솔루션/25/" class="neo-solution-link">
+            자세히 보기
+            <svg class="neo-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 솔루션 2: AMR -->
+      <div class="neo-solution-card">
+        <img src="https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/mainAMR.jpg" alt="산업현장 특화형 AMR" class="neo-solution-image">
+        <div class="neo-solution-content">
+          <div class="neo-solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <circle cx="7" cy="18" r="1"/>
+              <circle cx="17" cy="18" r="1"/>
+              <path d="M14 11V6a2 2 0 0 0-2-2H8"/>
+              <path d="M7 4v3"/>
+            </svg>
+          </div>
+          <h3>산업현장 특화형 Omnidirectional AMR</h3>
+          <p>어떤 바닥 조건에서도 흔들림 없이. 전방향으로 움직이는 산업현장형 AMR 로봇. 험지 대응 설계와 자동 도킹 기능을 제공합니다.</p>
+          <ul class="neo-solution-features">
+            <li>전방향 주행/제자리 회전: Swerve Drive 기반</li>
+            <li>험지 대응 설계: Rocker-Bogie 샤시 탑재</li>
+            <li>자동 도킹: 6mm 이하 정밀 도킹 검증</li>
+          </ul>
+          <a href="/category/솔루션/26/" class="neo-solution-link">
+            자세히 보기
+            <svg class="neo-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 솔루션 3: AI 용접 -->
+      <div class="neo-solution-card">
+        <img src="https://ecimg.cafe24img.com/pg1727b95312806034/neoarcrobotics/web/assets/ai_robotic_welding_automation-ChBlXxim.png" alt="AI 용접 자동화" class="neo-solution-image">
+        <div class="neo-solution-content">
+          <div class="neo-solution-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+            </svg>
+          </div>
+          <h3>AI 용접 자동화 솔루션</h3>
+          <p>숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다.</p>
+          <ul class="neo-solution-features">
+            <li>멀티모달 융합: 3D Vision + Smart Teaching</li>
+            <li>숙련 행동 복제: 안정적인 품질 목표 제어</li>
+            <li>현장 변동 대응: 비정형 변수 적응</li>
+          </ul>
+          <a href="/category/솔루션/27/" class="neo-solution-link">
+            자세히 보기
+            <svg class="neo-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     적용사례 섹션
+     ======================================== -->
+<section class="neo-cases">
+  <div class="neo-container">
+    <div class="neo-cases-header">
+      <div>
+        <h2 style="font-size: 28px; font-weight: 700; color: #1f2937; margin-bottom: 16px;">현장에서 검증된 적용 사례</h2>
+        <p style="font-size: 18px; color: #6b7280; max-width: 640px;">국내 대표 조선·철강 기업에서 실제 운영 중인 자동화 솔루션 사례를 확인하세요</p>
+      </div>
+      <a href="/category/적용사례/28/" class="neo-btn neo-btn-outline" style="background: transparent; border: 1px solid #e5e7eb; color: #1f2937;">
+        전체 사례 보기
+        <svg class="neo-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    
+    <div class="neo-cases-grid">
+      <!-- 사례 1 -->
+      <div class="neo-case-card">
+        <img src="https://ecimg.cafe24img.com/pg1727b95312806034/neoarcrobotics/web/assets/industrial_robotics_steel_cutting-C2m8OD2V.png" alt="HD현대중공업 사례" class="neo-case-image">
+        <div class="neo-case-content">
+          <span class="neo-case-badge">조선</span>
+          <h3>형강 끝단부 정밀 가공을 위한 스마트 보조 배출 시스템</h3>
+          <p class="neo-case-client">HD현대중공업 · Auxiliary Clamping</p>
+          <p class="neo-case-result">잔재부 가공 오차 0.5mm 이내 달성, 자재 수율 극대화</p>
+        </div>
+      </div>
+
+      <!-- 사례 2 -->
+      <div class="neo-case-card">
+        <img src="https://ecimg.cafe24img.com/pg1727b95312806034/neoarcrobotics/web/assets/industrial_robotics_steel_cutting-C2m8OD2V.png" alt="한화오션 사례" class="neo-case-image">
+        <div class="neo-case-content">
+          <span class="neo-case-badge">조선</span>
+          <h3>국내 최대 50m 초장축 형강 플라즈마 절단 라인 구축</h3>
+          <p class="neo-case-client">한화오션 · Mega-Scale Plasma</p>
+          <p class="neo-case-result">국내 최대 길이(50m) 가공 설비 구축 및 대형 자재 양산 체계 완성</p>
+        </div>
+      </div>
+
+      <!-- 사례 3 -->
+      <div class="neo-case-card">
+        <img src="https://ecimg.cafe24img.com/pg1727b95312806034/neoarcrobotics/web/assets/industrial_robotics_steel_cutting-C2m8OD2V.png" alt="중소기업 맞춤형 사례" class="neo-case-image">
+        <div class="neo-case-content">
+          <span class="neo-case-badge">철강 가공</span>
+          <h3>중소 제조 현장 맞춤형 형강 절단 장비 및 전용 SW 구축</h3>
+          <p class="neo-case-client">중소 형강 가공 전문기업 B사 · Custom Cutting System</p>
+          <p class="neo-case-result">현장 요구사항 100% 반영, 비숙련자 운용 효율 극대화</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     왜 우리를 선택? 섹션
+     ======================================== -->
+<section class="neo-whyus">
+  <div class="neo-container">
+    <div class="neo-section-header">
+      <h2>왜 NeoArcRobotics인가?</h2>
+      <p>"속도와 신뢰, 결과로 증명하기 때문입니다."<br>
+      설립 1년 만에 AMR 핵심 기술 특허 3건 확보 및 주행 플랫폼 개발 완료. 
+      HD현대중공업, 한화오션 등 글로벌 Top-tier 기업이 선택한 형강 가공 솔루션까지. 
+      네오아크로보틱스는 압도적인 기술 실행력으로 귀사의 가장 확실한 자동화 파트너가 되겠습니다.</p>
+    </div>
+    
+    <div class="neo-whyus-grid">
+      <!-- 이유 1 -->
+      <div class="neo-reason-card">
+        <div class="neo-reason-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>현장 검증 레퍼런스</h3>
+        <p>HD현대중공업, 한화오션 등 국내 대표 조선·철강 기업에서 실제 운영 중인 솔루션입니다.</p>
+      </div>
+
+      <!-- 이유 2 -->
+      <div class="neo-reason-card">
+        <div class="neo-reason-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="7"/>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+          </svg>
+        </div>
+        <h3>기술 특허 보유</h3>
+        <p>50건 이상의 특허 및 소프트웨어 등록으로 차별화된 핵심 기술력을 보유하고 있습니다.</p>
+      </div>
+
+      <!-- 이유 3 -->
+      <div class="neo-reason-card">
+        <div class="neo-reason-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+        </div>
+        <h3>맞춤형 설계</h3>
+        <p>현장 조건과 자재 스펙에 맞는 최적의 시스템 구성을 제안하고 설치합니다.</p>
+      </div>
+
+      <!-- 이유 4 -->
+      <div class="neo-reason-card">
+        <div class="neo-reason-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>전담 지원 체계</h3>
+        <p>설치부터 운영, 유지보수까지 전문 엔지니어의 체계적인 지원을 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+     CTA 섹션
+     ======================================== -->
+<section class="neo-cta">
+  <div class="neo-container">
+    <div class="neo-cta-box">
+      <h2>현장에 맞는 자동화 솔루션을 찾고 계신가요?</h2>
+      <p>전문 엔지니어가 현장 조건을 분석하고 최적의 도입 방안을 제안합니다. 지금 상담을 신청하세요.</p>
+      <div class="neo-cta-buttons">
+        <a href="/board/contact.html" class="neo-btn neo-btn-secondary">
+          <svg class="neo-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          무료 상담 신청
+        </a>
+        <a href="/board/download.html" class="neo-btn neo-btn-outline-light">
+          <svg class="neo-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          브로슈어 다운로드
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--@define(cmc_log)-->
+
+

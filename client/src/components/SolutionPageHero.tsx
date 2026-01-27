@@ -50,7 +50,7 @@ export default function SolutionPageHero({
               )}
             </div>
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6"
+              className="text-[34px] md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6"
               data-testid="solution-headline"
             >
               {headline}

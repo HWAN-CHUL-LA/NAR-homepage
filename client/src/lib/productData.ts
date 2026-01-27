@@ -579,3 +579,5 @@ export const getRelatedProducts = (productId: string): ProductDetail[] => {
     .filter((p): p is ProductDetail => p !== undefined)
 }
 
+
+

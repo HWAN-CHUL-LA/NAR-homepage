@@ -19,7 +19,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 py-24 lg:py-32">
         <div className="max-w-3xl">
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight"
+            className="flex flex-col justify-start items-center text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight"
             data-testid="hero-headline"
           >
             조선·철강 제조 혁신을 위한

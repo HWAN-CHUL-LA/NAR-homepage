@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Cpu, Bot, Cog, ChevronDown } from "lucide-react";
+import { Menu, X, Cpu, Bot, Cog, ChevronDown, Building, Download, Play } from "lucide-react";
 
 const solutions = [
   {
@@ -33,9 +33,26 @@ const solutions = [
   },
 ];
 
+const productCategories = [
+  { title: "Cutting System Products", href: "/products?tab=cutting", icon: Cpu },
+  { title: "Rugged AMR Products", href: "/products?tab=amr", icon: Bot },
+  { title: "AI Brain Robot Products", href: "/products?tab=ai", icon: Cog },
+];
+
+const caseCategories = [
+  { title: "조선 산업", href: "/cases?filter=조선", icon: Building },
+  { title: "Cutting 솔루션", href: "/cases?filter=cutting", icon: Cpu },
+  { title: "AMR 솔루션", href: "/cases?filter=amr", icon: Bot },
+];
+
+const resourceCategories = [
+  { title: "브로슈어 / 카탈로그", href: "/resources#brochure", icon: Download },
+  { title: "영상 자료", href: "/resources#videos", icon: Play },
+  { title: "스펙시트 / 기술 자료", href: "/resources#downloads", icon: Cog },
+];
+
 const navItems = [
   { label: "솔루션", href: "/solutions" },
-  { label: "제품", href: "/products" },
   { label: "적용 사례", href: "/cases" },
   { label: "리소스", href: "/resources" },
   { label: "회사 소개", href: "/about" },
@@ -56,16 +73,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all bg-white border-b shadow-sm duration-300" 
       data-testid="header"
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 lg:h-20">
-          <Link href="/" data-testid="link-home">
+          <Link href="/" data-testid="link-home" className="flex flex-wrap mt-0 mb-0">
             <span className="text-xl lg:text-2xl font-bold tracking-tight">
              NeoArcRobotics
             </span>
@@ -105,21 +118,75 @@ export default function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {navItems.slice(1).map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <Link href={item.href} data-testid={`nav-${item.href.slice(1)}`}>
-                    <NavigationMenuLink
-                      className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                        location === item.href
-                          ? "text-primary"
-                          : "text-foreground"
-                      }`}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
+              {/* 제품 드롭다운 */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent">
+                  제품
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
+                    {productCategories.map((category) => (
+                      <Link key={category.href} href={category.href}>
+                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-5 h-5 text-primary" />
+                          <div className="font-semibold text-sm">{category.title}</div>
+                        </NavigationMenuLink>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* 적용 사례 드롭다운 */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent">
+                  적용 사례
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
+                    {caseCategories.map((category) => (
+                      <Link key={category.href} href={category.href}>
+                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-5 h-5 text-primary" />
+                          <div className="font-semibold text-sm">{category.title}</div>
+                        </NavigationMenuLink>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* 리소스 드롭다운 */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent">
+                  리소스
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
+                    {resourceCategories.map((category) => (
+                      <Link key={category.href} href={category.href}>
+                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-5 h-5 text-primary" />
+                          <div className="font-semibold text-sm">{category.title}</div>
+                        </NavigationMenuLink>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* 회사 소개 (단일 링크) */}
+              <NavigationMenuItem>
+                <Link href="/about">
+                  <NavigationMenuLink
+                    className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                      location === "/about" ? "text-primary" : "text-foreground"
+                    }`}
+                  >
+                    회사 소개
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -165,18 +232,73 @@ export default function Header() {
                   </div>
                   <div className="my-4 border-t" />
                   <div className="space-y-1">
-                    {navItems.slice(1).map((item) => (
+                    <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
+                      제품
+                    </div>
+                    {productCategories.map((category) => (
                       <Link
-                        key={item.href}
-                        href={item.href}
+                        key={category.href}
+                        href={category.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-nav-${item.href.slice(1)}`}
+                        data-testid={`mobile-link-product-${category.href.split("=").pop()}`}
                       >
-                        <span className="block py-2 px-3 text-sm rounded-md hover-elevate active-elevate-2">
-                          {item.label}
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-4 h-4 text-primary" />
+                          <span className="text-sm">{category.title}</span>
                         </span>
                       </Link>
                     ))}
+                  </div>
+                  <div className="my-4 border-t" />
+                  <div className="space-y-1">
+                    <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
+                      적용 사례
+                    </div>
+                    {caseCategories.map((category) => (
+                      <Link
+                        key={category.href}
+                        href={category.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        data-testid={`mobile-link-case-${category.href.split("=").pop()}`}
+                      >
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-4 h-4 text-primary" />
+                          <span className="text-sm">{category.title}</span>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="my-4 border-t" />
+                  <div className="space-y-1">
+                    <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
+                      리소스
+                    </div>
+                    {resourceCategories.map((category) => (
+                      <Link
+                        key={category.href}
+                        href={category.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        data-testid={`mobile-link-resource-${category.href.split("#").pop()}`}
+                      >
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
+                          <category.icon className="w-4 h-4 text-primary" />
+                          <span className="text-sm">{category.title}</span>
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="my-4 border-t" />
+                  <div className="space-y-1">
+                    {/* 회사 소개 메뉴만 표시 (중복 제거) */}
+                    <Link
+                      href="/about"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      data-testid="mobile-nav-about"
+                    >
+                      <span className="block py-2 px-3 text-sm rounded-md hover-elevate active-elevate-2">
+                        회사 소개
+                      </span>
+                    </Link>
                   </div>
                 </nav>
                 <div className="p-4 border-t">

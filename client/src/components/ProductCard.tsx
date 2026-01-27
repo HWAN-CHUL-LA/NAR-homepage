@@ -36,20 +36,29 @@ export default function ProductCard({
     >
       <div className="aspect-square bg-muted rounded-t-md flex items-center justify-center relative overflow-hidden">
         {videoUrl ? (
-          <>
-            <video
+          videoUrl.includes("youtube.com") ? (
+            <iframe
               src={videoUrl}
-              muted
-              playsInline
-              preload="metadata"
               className="w-full h-full object-cover"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                <Play className="w-5 h-5 text-foreground ml-0.5" />
+          ) : (
+            <>
+              <video
+                src={videoUrl}
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
+                  <Play className="w-5 h-5 text-foreground ml-0.5" />
+                </div>
               </div>
-            </div>
-          </>
+            </>
+          )
         ) : image ? (
           <img src={image} alt={name} className="w-full h-full object-cover" />
         ) : (
