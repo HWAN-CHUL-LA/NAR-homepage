@@ -30,7 +30,7 @@ const caseStudies = [
     id: "sme-custom-solution",
     title: "중소 제조 현장 맞춤형 형강 절단 장비 및 전용 SW 구축",
     client: "중소 형강 가공 전문기업 B사",
-    industry: "철강 가공",
+    industry: "건설 현장",
     solution: "Custom Cutting System",
     challenge: "기성품 장비의 높은 도입 장벽과 현장 맞춤형 기능 부재",
     result: "현장 요구사항 100% 반영, 비숙련자 운용 효율 극대화",
@@ -48,7 +48,7 @@ export default function CaseStudiesSection() {
               현장에서 검증된 적용 사례
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              국내 대표 조선·철강 기업에서 실제 운영 중인 자동화 솔루션 사례를
+              국내 대표 조선·건설 기업에서 실제 운영 중인 자동화 솔루션 사례를
               확인하세요
             </p>
           </div>

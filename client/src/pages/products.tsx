@@ -35,7 +35,7 @@ const categoryInfo = {
   cutting: {
     title: "Cutting System",
     subtitle: "플라즈마 / 레이저 형강 절단 토탈 시스템",
-    description: "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현합니다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공하며, 조선·철강 현장에 최적화된 토탈 솔루션입니다.",
+    description: "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현합니다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공하며, 조선·건설 현장에 최적화된 토탈 솔루션입니다.",
     image: cuttingImage,
     features: [
       { icon: Cpu, title: "One-Stop 자동화", desc: "인입→절단→배출까지 무인 흐름" },

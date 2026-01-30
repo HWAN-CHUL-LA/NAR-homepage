@@ -53,7 +53,7 @@ export default function AboutGridSection() {
                 <Plus className="w-4 h-4 text-primary" />
               </div>
               <p className="text-gray-600 text-xs leading-relaxed">
-                조선·철강 산업의 자동화 혁신을 이끕니다
+                조선·건설 산업의 자동화 혁신을 이끕니다
               </p>
             </div>
           </div>

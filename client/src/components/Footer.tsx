@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="text-xl font-bold">ROBOTICS</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              조선·철강 제조 혁신을 위한
+              조선·건설 제조 혁신을 위한
               <br />
               토탈 자동화 솔루션
             </p>

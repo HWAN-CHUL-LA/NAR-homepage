@@ -7,7 +7,7 @@ import { caseStudies } from "@/lib/caseData"
 const industryFilters = [
   { id: "all", label: "전체" },
   { id: "조선", label: "조선" },
-  { id: "철강", label: "철강 가공" },
+  { id: "건설", label: "건설 현장" },
 ]
 
 const solutionOptions = [
@@ -58,7 +58,7 @@ export default function CaseFilterSection() {
               <Plus className="w-4 h-4 text-primary" />
             </div>
             <p className="text-gray-600 text-xs leading-relaxed">
-              국내 대표 조선·철강 기업에서 실제 운영 중인 자동화 솔루션 사례
+              국내 대표 조선·건설 기업에서 실제 운영 중인 자동화 솔루션 사례
             </p>
           </div>
 

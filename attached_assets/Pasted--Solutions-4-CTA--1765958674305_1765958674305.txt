@@ -7,7 +7,7 @@
 
 ```
 HOME
-  - Hero: "조선·철강 제조 혁신을 위한 토탈 자동화 솔루션"
+  - Hero: "조선·건설 제조 혁신을 위한 토탈 자동화 솔루션"
   - Solutions (4)
   - Products (3 그룹)
   - Industry Cases (대표 3~6개)

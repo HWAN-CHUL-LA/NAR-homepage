@@ -7,7 +7,7 @@ const reasons = [
     icon: Shield,
     title: "현장 검증 레퍼런스",
     description:
-      "HD현대중공업, 한화오션 등 국내 대표 조선·철강 기업에서 실제 운영 중인 솔루션입니다.",
+      "HD현대중공업, 한화오션 등 국내 대표 조선·건설 기업에서 실제 운영 중인 솔루션입니다.",
   },
   {
     icon: Award,

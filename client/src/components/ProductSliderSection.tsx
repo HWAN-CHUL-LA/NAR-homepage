@@ -29,7 +29,7 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Operating SW",
       productId: "operating-sw",
-      category: "Cutting System Products",
+      category: "형강절단 토탈 솔루션",
       description: "네스팅/보정/운영을 위한 통합 소프트웨어 패키지",
       specs: ["자동 네스팅 알고리즘", "실시간 보정 기능", "운영 모니터링 대시보드"],
       image: cuttingImage,
@@ -37,7 +37,7 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Sensing Package",
       productId: "sensing-package",
-      category: "Cutting System Products",
+      category: "형강절단 토탈 솔루션",
       description: "거리/비전 센서 기반 형상 인식 및 보정 시스템",
       specs: ["3D 비전 카메라", "레이저 거리 센서", "형상 자동 인식"],
       image: cuttingImage,
@@ -45,7 +45,7 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Infeed Module",
       productId: "infeed-module",
-      category: "Cutting System Products",
+      category: "형강절단 토탈 솔루션",
       description: "컨베이어/푸셔/트래커 기반 자재 인입 시스템",
       specs: ["롤러 컨베이어", "자동 정렬 푸셔", "위치 트래킹"],
       image: cuttingImage,
@@ -53,7 +53,7 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Laser Cutting Cell",
       productId: "laser-cutting-cell",
-      category: "Cutting System Products",
+      category: "형강절단 토탈 솔루션",
       description: "고정밀 파이버 레이저 기반 형강 절단 셀",
       specs: ["출력: 6kW~12kW", "절단 두께: ~25mm", "위치 정밀도: ±0.1mm"],
       image: cuttingImage,
@@ -61,17 +61,43 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Plasma Cutting Cell",
       productId: "plasma-cutting-cell",
-      category: "Cutting System Products",
+      category: "형강절단 토탈 솔루션",
       description: "고속 플라즈마 기반 중후판 형강 절단 셀",
       specs: ["출력: 최대 400A", "절단 두께: ~50mm", "고속 절단 지원"],
       image: cuttingImage,
+    },
+  ],
+  welding: [
+    {
+      name: "Smart Teaching Tool",
+      productId: "smart-teaching-tool",
+      category: "수용접 로봇",
+      description: "숙련공의 용접 감각을 데이터화하는 스마트 티칭 도구",
+      specs: ["동작 캡처", "힘/속도 감지", "학습 데이터 생성"],
+      image: aiImage,
+    },
+    {
+      name: "Welding Vision System",
+      productId: "welding-vision",
+      category: "수용접 로봇",
+      description: "용접부 실시간 인식을 위한 3D 비전 시스템",
+      specs: ["갭 감지", "경로 보정", "실시간 모니터링"],
+      image: aiImage,
+    },
+    {
+      name: "Welding Robot Cell",
+      productId: "welding-robot-cell",
+      category: "수용접 로봇",
+      description: "숙련공 동작을 재현하는 AI 용접 로봇 셀",
+      specs: ["다관절 로봇", "용접 토치 일체형", "자동 와이어 공급"],
+      image: aiImage,
     },
   ],
   amr: [
     {
       name: "Rugged AMR Base",
       productId: "rugged-amr-base",
-      category: "Rugged AMR Products",
+      category: "AMR",
       description: "Swerve Drive + Rocker-Bogie 기반 험지 대응 AMR 플랫폼",
       specs: ["최대 적재: 1,000kg", "전방향 이동", "경사면 주행 가능"],
       image: amrImage,
@@ -79,7 +105,7 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Auto Docking Module",
       productId: "auto-docking-module",
-      category: "Rugged AMR Products",
+      category: "AMR",
       description: "정밀 자동 도킹을 위한 센서 및 제어 모듈",
       specs: ["도킹 정밀도: ±6mm", "비전/거리 센서", "자동 정렬"],
       image: amrImage,
@@ -87,57 +113,53 @@ const productGroups: Record<string, Product[]> = {
     {
       name: "Payload Modules",
       productId: "payload-modules",
-      category: "Rugged AMR Products",
+      category: "AMR",
       description: "스크랩/팔레트/랙/컨베이어 등 맞춤형 상부 모듈",
       specs: ["모듈식 설계", "다양한 적재 옵션", "빠른 교체 가능"],
       image: amrImage,
-      isComingSoon: true,
     },
     {
       name: "Fleet Management",
       productId: "fleet-management",
-      category: "Rugged AMR Products",
+      category: "AMR",
       description: "다수 AMR 통합 운영을 위한 Fleet 관리 시스템",
       specs: ["실시간 위치 추적", "작업 할당 최적화", "충돌 회피"],
       image: amrImage,
-      isComingSoon: true,
     },
   ],
   ai: [
     {
-      name: "Smart Teaching Tool",
-      productId: "smart-teaching-tool",
-      category: "AI Brain Robot Products",
-      description: "숙련공의 작업 감각을 데이터화하는 스마트 티칭 도구",
-      specs: ["동작 캡처", "힘/속도 감지", "학습 데이터 생성"],
-      image: aiImage,
-      isComingSoon: true,
-    },
-    {
       name: "3D Vision Package",
       productId: "3d-vision-package",
-      category: "AI Brain Robot Products",
+      category: "현장 적응형 AI",
       description: "고정밀 3D 형상 인식을 위한 비전 시스템",
       specs: ["고해상도 스캔", "실시간 처리", "형상 분석"],
       image: aiImage,
-      isComingSoon: true,
     },
     {
       name: "AI Control Module",
       productId: "ai-control-module",
-      category: "AI Brain Robot Products",
+      category: "현장 적응형 AI",
       description: "Physical-AI 기반 적응형 로봇 제어 모듈",
       specs: ["실시간 학습", "변동 대응", "품질 최적화"],
       image: aiImage,
-      isComingSoon: true,
+    },
+    {
+      name: "Edge Computing Unit",
+      productId: "edge-computing-unit",
+      category: "현장 적응형 AI",
+      description: "현장 데이터 실시간 처리를 위한 엣지 컴퓨팅 장치",
+      specs: ["저지연 처리", "로컬 AI 추론", "클라우드 연동"],
+      image: aiImage,
     },
   ],
 }
 
 const tabs = [
-  { id: "cutting", label: "스탠다드 Cutting" },
-  { id: "amr", label: "커스텀 AMR" },
-  { id: "ai", label: "자동화 설비" },
+  { id: "cutting", label: "형강절단 토탈 솔루션" },
+  { id: "welding", label: "수용접 로봇" },
+  { id: "amr", label: "AMR" },
+  { id: "ai", label: "현장 적응형 AI" },
 ]
 
 export default function ProductSliderSection() {
@@ -187,12 +209,12 @@ export default function ProductSliderSection() {
 
           {/* Tabs */}
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 overflow-x-auto">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`text-xs font-medium transition-all pb-1 border-b-2 ${
+                  className={`text-xs font-medium transition-all pb-1 border-b-2 whitespace-nowrap ${
                     activeTab === tab.id
                       ? "text-white border-primary"
                       : "text-gray-400 border-transparent hover:text-white"

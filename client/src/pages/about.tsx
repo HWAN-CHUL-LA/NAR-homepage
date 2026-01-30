@@ -63,12 +63,12 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="max-w-3xl">
               <h1 className="text-3xl lg:text-4xl font-bold mb-6">
-                조선·철강 산업의
+                조선·건설 산업의
                 <br />
                 자동화 혁신을 이끕니다
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                ROBOTICS는 2010년 설립 이래 조선·철강 산업에 특화된 자동화 솔루션을
+                ROBOTICS는 2010년 설립 이래 조선·건설 산업에 특화된 자동화 솔루션을
                 개발해왔습니다. HD현대중공업, 한화오션 등 국내 대표 중공업 기업에서
                 검증된 기술력을 바탕으로, 형강 절단부터 무인 물류, 차세대 AI 기반
                 용접 자동화까지 토탈 솔루션을 제공합니다.

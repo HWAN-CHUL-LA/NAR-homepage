@@ -22,7 +22,7 @@ export default function HeroSection() {
             className="flex flex-col justify-start items-center text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight"
             data-testid="hero-headline"
           >
-            조선·철강 제조 혁신을 위한
+            조선·건설 제조 혁신을 위한
             <br />
             <span className="text-primary">토탈 자동화 솔루션</span>
           </h1>

@@ -57,7 +57,7 @@ export default function SolutionsGrid() {
             검증된 자동화 솔루션
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            조선·철강 현장에 최적화된 4가지 핵심 솔루션으로 생산성을 혁신합니다
+            조선·건설 현장에 최적화된 4가지 핵심 솔루션으로 생산성을 혁신합니다
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

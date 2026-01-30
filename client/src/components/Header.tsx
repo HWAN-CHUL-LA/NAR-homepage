@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "wouter"
+import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,84 +8,97 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Cpu, Bot, Cog, ChevronDown, Building, Download, Play } from "lucide-react";
+} from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Menu } from "lucide-react"
 
-const solutions = [
-  {
-    title: "Smart Cutting System",
-    description: "형강 절단 토탈 솔루션",
-    icon: Cpu,
-    href: "/solutions/cutting",
-  },
-  {
-    title: "산업현장 특화형 Omnidirectional AMR",
-    description: "산업현장 특화형 AMR",
-    icon: Bot,
-    href: "/solutions/amr",
-  },
-  {
-    title: "AI Brain Robot",
-    description: "Physical-AI 기반 자동화",
-    icon: Cog,
-    href: "/solutions/ai-brain",
-  },
-];
+// 이미지 import
+import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
+import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
+import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
 
-const productCategories = [
-  { title: "Cutting System Products", href: "/products?tab=cutting", icon: Cpu },
-  { title: "Rugged AMR Products", href: "/products?tab=amr", icon: Bot },
-  { title: "AI Brain Robot Products", href: "/products?tab=ai", icon: Cog },
-];
+// 통합 메뉴 데이터 (모든 메뉴에 이미지 카드 3개씩)
+const menuCategories = {
+  solutions: [
+    { title: "Cutting System", description: "형강 절단 토탈 솔루션", image: cuttingImage, href: "/solutions/cutting" },
+    { title: "Rugged AMR", description: "산업현장 특화형 AMR", image: amrImage, href: "/solutions/amr" },
+    { title: "AI Brain Robot", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
+  ],
+  products: [
+    { title: "Cutting System", description: "형강 절단 제품", image: cuttingImage, href: "/products?tab=cutting" },
+    { title: "Rugged AMR", description: "AMR 제품", image: amrImage, href: "/products?tab=amr" },
+    { title: "AI Brain Robot", description: "AI 로봇 제품", image: aiImage, href: "/products?tab=ai" },
+  ],
+  cases: [
+    { title: "조선 산업", description: "조선소 적용 사례", image: cuttingImage, href: "/cases?industry=조선" },
+    { title: "건설 현장", description: "건설 현장 사례", image: amrImage, href: "/cases?industry=건설" },
+    { title: "물류 자동화", description: "물류 자동화 사례", image: aiImage, href: "/cases" },
+  ],
+  resources: [
+    { title: "브로슈어", description: "제품 카탈로그", image: cuttingImage, href: "/resources#brochure" },
+    { title: "영상 자료", description: "데모 영상", image: amrImage, href: "/resources#videos" },
+    { title: "기술 자료", description: "스펙시트", image: aiImage, href: "/resources#downloads" },
+  ],
+}
 
-const caseCategories = [
-  { title: "조선 산업", href: "/cases?filter=조선", icon: Building },
-  { title: "Cutting 솔루션", href: "/cases?filter=cutting", icon: Cpu },
-  { title: "AMR 솔루션", href: "/cases?filter=amr", icon: Bot },
-];
+// 재사용 가능한 메뉴 카드 컴포넌트
+interface MenuCardProps {
+  item: {
+    title: string
+    description: string
+    image: string
+    href: string
+  }
+  onClose?: () => void
+}
 
-const resourceCategories = [
-  { title: "브로슈어 / 카탈로그", href: "/resources#brochure", icon: Download },
-  { title: "영상 자료", href: "/resources#videos", icon: Play },
-  { title: "스펙시트 / 기술 자료", href: "/resources#downloads", icon: Cog },
-];
-
-const navItems = [
-  { label: "솔루션", href: "/solutions" },
-  { label: "적용 사례", href: "/cases" },
-  { label: "리소스", href: "/resources" },
-  { label: "회사 소개", href: "/about" },
-];
+const MenuCard = ({ item, onClose }: MenuCardProps) => (
+  <Link href={item.href} onClick={onClose}>
+    <NavigationMenuLink className="block group">
+      <div className="rounded-lg overflow-hidden mb-2">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-200"
+        />
+      </div>
+      <h4 className="font-semibold text-sm text-gray-900 group-hover:text-primary transition-colors">
+        {item.title}
+      </h4>
+      <p className="text-xs text-gray-500 line-clamp-1">{item.description}</p>
+    </NavigationMenuLink>
+  </Link>
+)
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [location] = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all bg-white border-b shadow-sm duration-300" 
+      className="fixed top-0 left-0 right-0 z-50 transition-all bg-white border-b shadow-sm duration-300"
       data-testid="header"
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-16 lg:h-20">
           <Link href="/" data-testid="link-home" className="flex flex-wrap mt-0 mb-0">
             <span className="text-xl lg:text-2xl font-bold tracking-tight">
-             NeoArcRobotics
+              NeoArcRobotics
             </span>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-1">
+              {/* 솔루션 드롭다운 */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className="bg-transparent"
@@ -94,25 +107,9 @@ export default function Header() {
                   솔루션
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[500px] grid-cols-2">
-                    {solutions.map((solution) => (
-                      <Link
-                        key={solution.href}
-                        href={solution.href}
-                        data-testid={`link-${solution.href.split("/").pop()}`}
-                      >
-                        <NavigationMenuLink className="flex items-start gap-3 p-3 rounded-md hover-elevate active-elevate-2">
-                          <solution.icon className="w-5 h-5 mt-0.5 text-primary" />
-                          <div>
-                            <div className="font-semibold text-sm">
-                              {solution.title}
-                            </div>
-                            <div className="text-sm text-muted-foreground">
-                              {solution.description}
-                            </div>
-                          </div>
-                        </NavigationMenuLink>
-                      </Link>
+                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                    {menuCategories.solutions.map((item) => (
+                      <MenuCard key={item.href} item={item} />
                     ))}
                   </div>
                 </NavigationMenuContent>
@@ -124,14 +121,9 @@ export default function Header() {
                   제품
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
-                    {productCategories.map((category) => (
-                      <Link key={category.href} href={category.href}>
-                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-5 h-5 text-primary" />
-                          <div className="font-semibold text-sm">{category.title}</div>
-                        </NavigationMenuLink>
-                      </Link>
+                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                    {menuCategories.products.map((item) => (
+                      <MenuCard key={item.href} item={item} />
                     ))}
                   </div>
                 </NavigationMenuContent>
@@ -143,14 +135,9 @@ export default function Header() {
                   적용 사례
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
-                    {caseCategories.map((category) => (
-                      <Link key={category.href} href={category.href}>
-                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-5 h-5 text-primary" />
-                          <div className="font-semibold text-sm">{category.title}</div>
-                        </NavigationMenuLink>
-                      </Link>
+                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                    {menuCategories.cases.map((item) => (
+                      <MenuCard key={item.href} item={item} />
                     ))}
                   </div>
                 </NavigationMenuContent>
@@ -162,14 +149,9 @@ export default function Header() {
                   리소스
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[400px] grid-cols-1">
-                    {resourceCategories.map((category) => (
-                      <Link key={category.href} href={category.href}>
-                        <NavigationMenuLink className="flex items-center gap-3 p-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-5 h-5 text-primary" />
-                          <div className="font-semibold text-sm">{category.title}</div>
-                        </NavigationMenuLink>
-                      </Link>
+                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                    {menuCategories.resources.map((item) => (
+                      <MenuCard key={item.href} item={item} />
                     ))}
                   </div>
                 </NavigationMenuContent>
@@ -196,6 +178,7 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* 모바일 메뉴 */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button
@@ -212,94 +195,96 @@ export default function Header() {
                   <span className="text-xl font-bold">NeoArcRobotics</span>
                 </div>
                 <nav className="flex-1 overflow-auto p-4">
-                  <div className="space-y-1">
+                  {/* 솔루션 */}
+                  <div className="space-y-1 mb-4">
                     <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
                       솔루션
                     </div>
-                    {solutions.map((solution) => (
+                    {menuCategories.solutions.map((item) => (
                       <Link
-                        key={solution.href}
-                        href={solution.href}
+                        key={item.href}
+                        href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-${solution.href.split("/").pop()}`}
                       >
-                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
-                          <solution.icon className="w-4 h-4 text-primary" />
-                          <span className="text-sm">{solution.title}</span>
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                          <span className="text-sm">{item.title}</span>
                         </span>
                       </Link>
                     ))}
                   </div>
-                  <div className="my-4 border-t" />
-                  <div className="space-y-1">
+
+                  <div className="border-t my-2" />
+
+                  {/* 제품 */}
+                  <div className="space-y-1 mb-4">
                     <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
                       제품
                     </div>
-                    {productCategories.map((category) => (
+                    {menuCategories.products.map((item) => (
                       <Link
-                        key={category.href}
-                        href={category.href}
+                        key={item.href}
+                        href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-product-${category.href.split("=").pop()}`}
                       >
-                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-4 h-4 text-primary" />
-                          <span className="text-sm">{category.title}</span>
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                          <span className="text-sm">{item.title}</span>
                         </span>
                       </Link>
                     ))}
                   </div>
-                  <div className="my-4 border-t" />
-                  <div className="space-y-1">
+
+                  <div className="border-t my-2" />
+
+                  {/* 적용 사례 */}
+                  <div className="space-y-1 mb-4">
                     <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
                       적용 사례
                     </div>
-                    {caseCategories.map((category) => (
+                    {menuCategories.cases.map((item) => (
                       <Link
-                        key={category.href}
-                        href={category.href}
+                        key={item.href}
+                        href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-case-${category.href.split("=").pop()}`}
                       >
-                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-4 h-4 text-primary" />
-                          <span className="text-sm">{category.title}</span>
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                          <span className="text-sm">{item.title}</span>
                         </span>
                       </Link>
                     ))}
                   </div>
-                  <div className="my-4 border-t" />
-                  <div className="space-y-1">
+
+                  <div className="border-t my-2" />
+
+                  {/* 리소스 */}
+                  <div className="space-y-1 mb-4">
                     <div className="py-2 px-3 text-sm font-semibold text-muted-foreground">
                       리소스
                     </div>
-                    {resourceCategories.map((category) => (
+                    {menuCategories.resources.map((item) => (
                       <Link
-                        key={category.href}
-                        href={category.href}
+                        key={item.href}
+                        href={item.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        data-testid={`mobile-link-resource-${category.href.split("#").pop()}`}
                       >
-                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover-elevate active-elevate-2">
-                          <category.icon className="w-4 h-4 text-primary" />
-                          <span className="text-sm">{category.title}</span>
+                        <span className="flex items-center gap-3 py-2 px-3 rounded-md hover:bg-gray-100 transition-colors">
+                          <span className="text-sm">{item.title}</span>
                         </span>
                       </Link>
                     ))}
                   </div>
-                  <div className="my-4 border-t" />
-                  <div className="space-y-1">
-                    {/* 회사 소개 메뉴만 표시 (중복 제거) */}
-                    <Link
-                      href="/about"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      data-testid="mobile-nav-about"
-                    >
-                      <span className="block py-2 px-3 text-sm rounded-md hover-elevate active-elevate-2">
-                        회사 소개
-                      </span>
-                    </Link>
-                  </div>
+
+                  <div className="border-t my-2" />
+
+                  {/* 회사 소개 */}
+                  <Link
+                    href="/about"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    data-testid="mobile-nav-about"
+                  >
+                    <span className="block py-2 px-3 text-sm rounded-md hover:bg-gray-100 transition-colors">
+                      회사 소개
+                    </span>
+                  </Link>
                 </nav>
                 <div className="p-4 border-t">
                   <Link
@@ -317,5 +302,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }

@@ -142,7 +142,7 @@ export const caseStudies: CaseStudy[] = [
     id: "sme-custom-solution",
     title: "중소 제조 현장 맞춤형 형강 절단 장비 및 전용 SW 구축",
     client: "중소 형강 가공 전문기업 B사",
-    industry: "철강 가공 / 건축 자재 (Steel Fabrication)",
+    industry: "건설 현장 / 건축 자재 (Construction)",
     solution: "Customized Steel Cutting System & Dedicated OS",
     challenge: "기성품 장비의 높은 도입 장벽(비용/크기)과 현장 맞춤형 기능 부재",
     result: "현장 요구사항 100% 반영된 장비 구축, 비숙련자 운용 효율 극대화",
@@ -203,4 +203,67 @@ export function getRelatedCases(id: string): CaseStudy[] {
   return currentCase.relatedCases
     .map((relatedId) => getCaseById(relatedId))
     .filter((c): c is CaseStudy => c !== undefined)
+}
+
+// 필터용 데이터 추출 함수들
+export function getUniqueIndustries(): string[] {
+  const industries = caseStudies.map((c) => {
+    // "조선 (Shipbuilding)" -> "조선"으로 정규화
+    const normalized = c.industry.split(" ")[0].split("/")[0].trim()
+    return normalized
+  })
+  return [...new Set(industries)]
+}
+
+export function getUniqueSolutions(): string[] {
+  return [...new Set(caseStudies.map((c) => c.solution))]
+}
+
+// 산업군 목록 (UI용)
+export const industryOptions = [
+  { id: "조선", label: "조선" },
+  { id: "건설", label: "건설 현장" },
+  { id: "물류", label: "물류" },
+  { id: "제조", label: "제조" },
+]
+
+// 솔루션 목록 (UI용)
+export const solutionOptions = [
+  { id: "cutting", label: "Cutting System" },
+  { id: "amr", label: "Rugged AMR" },
+  { id: "ai", label: "AI Brain Robot" },
+]
+
+// 제품 목록 (UI용)
+export const productOptions = [
+  { id: "plasma", label: "플라즈마 절단" },
+  { id: "laser", label: "레이저 절단" },
+  { id: "amr-base", label: "AMR Base" },
+  { id: "fleet", label: "Fleet Management" },
+]
+
+// 필터링 함수
+export function filterCases(
+  industries: string[],
+  solution: string,
+  product: string
+): CaseStudy[] {
+  return caseStudies.filter((c) => {
+    // 산업군 필터
+    const industryMatch =
+      industries.length === 0 ||
+      industries.some((ind) => c.industry.toLowerCase().includes(ind.toLowerCase()))
+
+    // 솔루션 필터
+    const solutionMatch =
+      !solution ||
+      c.solution.toLowerCase().includes(solution.toLowerCase())
+
+    // 제품 필터 (솔루션명에서 키워드 매칭)
+    const productMatch =
+      !product ||
+      c.solution.toLowerCase().includes(product.toLowerCase())
+
+    return industryMatch && solutionMatch && productMatch
+  })
 }

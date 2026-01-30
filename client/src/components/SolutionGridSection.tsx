@@ -1,45 +1,36 @@
 import { Link } from "wouter"
-import { ArrowRight, Plus } from "lucide-react"
+import { ArrowRight, Plus, Scissors, Flame, Bot, Brain } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Cpu, Bot, Cog } from "lucide-react"
+import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
+import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
 import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
-
-const cuttingImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766044887/%ED%98%95%EA%B0%95%EC%A0%88%EB%8B%A8%EC%9E%A5%EB%B9%84%EC%82%AC%EC%A7%841_mvj532.jpg"
-const amrImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/mainAMR.jpg"
 
 const solutions = [
   {
-    title: "공장 조립 자동화 설비",
-    description: "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현하다. 최적의 자동화 시스템 및 SI 서비스",
-    icon: Cpu,
+    title: "절단",
+    description: "플라즈마/레이저 기반 형강 절단 토탈 시스템. 소재 투입부터 배출까지 완전 자동화를 실현합니다.",
+    icon: Scissors,
     href: "/solutions/cutting",
     image: cuttingImage,
   },
   {
-    title: "공장 물류 자동화",
-    description: "4차산업 시대와 트렌드에 맞춰 자체 개발한 AMR, GoCart를 통해 완성한 물류 자동화 시스템",
-    icon: Bot,
-    href: "/solutions/amr",
-    image: amrImage,
-  },
-  {
-    title: "창고 물류 자동화",
-    description: "Digital Picking System과 GoCart를 결합해 신속한 오더피킹과 최적의 물류 이송 환경 조성",
-    icon: Cog,
+    title: "용접",
+    description: "숙련공의 노하우를 데이터화하여 로봇에 이식하는 AI 기반 지능형 용접 자동화 솔루션.",
+    icon: Flame,
     href: "/solutions/ai-brain",
     image: aiImage,
   },
   {
-    title: "헬스케어 물류 자동화",
-    description: "병원 병동 간 이송, 방문객 안내 및 환자 회진, 세탁물, 우편, 배식 이송 등 기타 물류 이송 자동화",
+    title: "AMR",
+    description: "Swerve Drive와 Rocker-Bogie 기반 험지 대응 산업현장 특화형 자율주행 로봇.",
     icon: Bot,
     href: "/solutions/amr",
     image: amrImage,
   },
   {
-    title: "로보타이제이션 솔루션",
-    description: "기존 AGV 및 수동 장비를 쉽고 빠르게 자율주행 AMR로 레트로핏 해주는 종합 Robotization 패키지",
-    icon: Cog,
+    title: "현장 적용 AI",
+    description: "Physical-AI 기반 적응형 제어. 현장 변동에 실시간으로 대응하는 차세대 자동화 기술.",
+    icon: Brain,
     href: "/solutions/ai-brain",
     image: aiImage,
   },
@@ -57,7 +48,7 @@ export default function SolutionGridSection() {
               <Plus className="w-4 h-4 text-primary" />
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              인더스트리 4.0과 로지스틱스 4.0을 위한 전방위 토탈 스마트팩토리 솔루션
+              조선·건설 현장에 최적화된 로봇 자동화 솔루션
             </p>
           </div>
 
@@ -99,10 +90,10 @@ export default function SolutionGridSection() {
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 flex flex-col justify-between h-full">
                 <div>
                   <h3 className="text-sm font-bold text-gray-900 mb-2 leading-tight">
-                    유진로봇은 기업이 더 혁신적인 스마트 공장 구축을 위해 필요한 Robotics & Automation 솔루션을 제공합니다.
+                    네오아크로보틱스는 조선·건설 현장에 최적화된 로봇 자동화 솔루션을 제공합니다.
                   </h3>
                   <p className="text-gray-600 text-xs">
-                    유진로봇의 인증된 전문가와 함께 혁신의 변화를 시작하세요.
+                    전문 엔지니어와 함께 현장 맞춤형 자동화 혁신을 시작하세요.
                   </p>
                 </div>
 
@@ -110,7 +101,7 @@ export default function SolutionGridSection() {
                   <Link href="/contact">
                     <Button className="w-full gap-2 h-8 text-xs" variant="outline">
                       <span className="w-3 h-3 border border-current rounded-sm flex items-center justify-center text-[10px]">✓</span>
-                      YUJIN ROBOT 솔루션 문의하기
+                      솔루션 문의하기
                     </Button>
                   </Link>
                   <Link href="/resources">
