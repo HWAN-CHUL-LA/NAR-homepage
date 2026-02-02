@@ -1,9 +1,7 @@
 import { Link } from "wouter"
-import { ArrowRight, Plus, MessageSquare, Phone } from "lucide-react"
+import { ArrowRight, Plus, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-// 기업 전경 이미지 (실제 이미지로 교체 필요)
-const companyImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766044887/%ED%98%95%EA%B0%95%EC%A0%88%EB%8B%A8%EC%9E%A5%EB%B9%84%EC%82%AC%EC%A7%841_mvj532.jpg"
+import companyImage from "@assets/기업건물2026.png"
 
 const menuItems = [
   {
@@ -18,7 +16,7 @@ const menuItems = [
   },
   {
     title: "연혁",
-    description: "2010년 설립부터 현재까지",
+    description: "주요 프로젝트 및 성장 과정",
     href: "/about#history",
   },
   {
@@ -103,10 +101,6 @@ export default function AboutGridSection() {
                     문의 바로가기
                   </Button>
                 </Link>
-                <Button size="sm" variant="outline" className="gap-1 w-full sm:w-auto h-8 text-xs">
-                  <Phone className="w-3 h-3" />
-                  CS 문의하기
-                </Button>
               </div>
             </div>
           </div>

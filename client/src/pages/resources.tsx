@@ -34,7 +34,7 @@ const resources = {
       thumbnail: amrImage,
     },
     {
-      title: "현장 적용 AI 기술 소개",
+      title: "Physical AI 기술 소개",
       description:
         "Physical-AI 기반 지능형 자동화 솔루션의 개발 방향과 로드맵을 공유합니다.",
       type: "brochure" as const,

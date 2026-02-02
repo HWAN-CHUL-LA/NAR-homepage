@@ -23,13 +23,13 @@ const menuCategories = {
     { title: "절단", description: "형강 절단 토탈 솔루션", image: cuttingImage, href: "/solutions/cutting" },
     { title: "용접", description: "AI 기반 정밀 용접 솔루션", image: aiImage, href: "/solutions/welding" },
     { title: "AMR", description: "산업현장 특화형 AMR", image: amrImage, href: "/solutions/amr" },
-    { title: "현장 적용 AI", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
+    { title: "Physical AI", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
   ],
   products: [
     { title: "형강절단 로봇", description: "고정밀 형강 절단 시스템", image: cuttingImage, href: "/products?tab=cutting" },
     { title: "수용접 로봇", description: "협동 로봇 기반 수용접 자동화", image: aiImage, href: "/products?tab=welding" },
     { title: "AMR", description: "산업용 전방향 AMR", image: amrImage, href: "/products?tab=amr" },
-    { title: "AI", description: "산업용 AI 솔루션", image: aiImage, href: "/products?tab=ai" },
+    { title: "Physical AI", description: "산업용 AI 솔루션", image: aiImage, href: "/products?tab=ai" },
   ],
   cases: [
     { title: "조선", description: "한화오션, 현대중공업, 한빛이엔지", image: cuttingImage, href: "/cases?industry=조선" },

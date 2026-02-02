@@ -2,9 +2,9 @@ import { Card } from "@/components/ui/card";
 
 // todo: remove mock functionality - replace with real stats
 const stats = [
-  { value: "15+", label: "년간 기술 개발", suffix: "" },
-  { value: "50", label: "특허 및 SW 등록", suffix: "+" },
-  { value: "99.2", label: "절단 정밀도", suffix: "%" },
+  { value: "2+", label: "년간 기술 개발", suffix: "" },
+  { value: "3", label: "특허 및 SW 등록", suffix: "+" },
+  { value: "4", label: "개 분야 토탈 솔루션", suffix: "" },
   { value: "24/7", label: "무인 운영 실현", suffix: "" },
 ];
 

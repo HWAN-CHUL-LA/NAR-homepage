@@ -43,7 +43,7 @@ const solutions = [
   { value: "cutting", label: "절단 솔루션" },
   { value: "welding", label: "용접 솔루션" },
   { value: "amr", label: "AMR 솔루션" },
-  { value: "ai-brain", label: "현장 적용 AI 솔루션" },
+  { value: "ai-brain", label: "Physical AI 솔루션" },
   { value: "other", label: "기타 / 통합 솔루션" },
 ];
 

@@ -28,7 +28,7 @@ const solutions = [
     image: amrImage,
   },
   {
-    title: "현장 적용 AI",
+    title: "Physical AI",
     description: "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다.",
     icon: Brain,
     href: "/solutions/ai-brain",

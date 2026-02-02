@@ -114,7 +114,7 @@ export const productDetails: Record<string, ProductDetail> = {
   "cutting-automation-ai": {
     id: "cutting-automation-ai",
     name: "형강절단 로봇 무인화 AI",
-    category: "현장 적용형 AI",
+    category: "Physical AI",
     categorySlug: "ai",
     tagline: "형강 절단 공정의 완전 무인화를 위한 AI 솔루션",
     description: "비전 센서 데이터를 실시간으로 분석하여 자재의 변형을 보정하고 최적의 절단 경로를 스스로 생성하는 AI 시스템입니다.",
@@ -132,7 +132,7 @@ export const productDetails: Record<string, ProductDetail> = {
   "expert-imitation-ai": {
     id: "expert-imitation-ai",
     name: "고숙련자 행동모사 AI",
-    category: "현장 적용형 AI",
+    category: "Physical AI",
     categorySlug: "ai",
     tagline: "숙련공의 작업 노하우를 학습하고 재현하는 AI",
     description: "베테랑 작업자의 미세한 손동작과 감각을 데이터화하여 로봇이 동일한 수준의 작업을 수행할 수 있도록 학습시키는 기술입니다.",

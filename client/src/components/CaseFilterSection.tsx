@@ -15,7 +15,7 @@ const solutionOptions = [
   { value: "cutting", label: "절단" },
   { value: "welding", label: "용접" },
   { value: "amr", label: "AMR" },
-  { value: "ai", label: "현장 적용 AI" },
+  { value: "ai", label: "Physical AI" },
 ]
 
 const productOptions = [

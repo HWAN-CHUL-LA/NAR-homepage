@@ -81,7 +81,7 @@ const categoryInfo = {
     ],
   },
   ai: {
-    title: "AI",
+    title: "Physical AI",
     subtitle: "Physical-AI 기반 자동화 솔루션",
     description: "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다. Physical-AI 기반으로 현장 변동에 적응하는 차세대 자동화를 구현합니다.",
     image: aiImage,

@@ -9,9 +9,9 @@ import { Button } from "@/components/ui/button"
 import "swiper/css"
 import "swiper/css/navigation"
 
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
 import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
 import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
+import plasmaImage from "@assets/Plasma1.JPG"
 
 interface Product {
   name: string
@@ -19,7 +19,7 @@ interface Product {
   category: string
   description: string
   specs: string[]
-  image?: string
+  images: string[]
   videoUrl?: string
   isComingSoon?: boolean
 }
@@ -32,7 +32,7 @@ const productGroups: Record<string, Product[]> = {
       category: "형강절단 로봇",
       description: "표준형 형강 절단 로봇 시스템",
       specs: ["고정밀 플라즈마 절단", "표준 규격 형강 대응", "합리적인 도입 비용"],
-      image: cuttingImage,
+      images: [plasmaImage],
     },
     {
       name: "PCRS-Extended",
@@ -40,7 +40,7 @@ const productGroups: Record<string, Product[]> = {
       category: "형강절단 로봇",
       description: "확장형 형강 절단 로봇 시스템",
       specs: ["대형 형강 대응", "확장된 작업 영역", "고하중 자재 핸들링"],
-      image: cuttingImage,
+      images: [plasmaImage],
     },
     {
       name: "LCRS - standard",
@@ -48,7 +48,7 @@ const productGroups: Record<string, Product[]> = {
       category: "형강절단 로봇",
       description: "표준형 레이저 형강 절단 로봇 시스템",
       specs: ["고출력 파이버 레이저", "서브밀리미터 정밀도", "열 변형 최소화"],
-      image: cuttingImage,
+      images: [plasmaImage],
     },
   ],
   welding: [
@@ -58,7 +58,7 @@ const productGroups: Record<string, Product[]> = {
       category: "수용접 로봇",
       description: "수용접 및 절단 기능을 결합한 협동 로봇 시스템",
       specs: ["협동 로봇 기반 안전 작업", "용접/절단 듀얼 모드", "간편한 티칭 인터페이스"],
-      image: aiImage,
+      images: [aiImage, amrImage],
     },
   ],
   amr: [
@@ -68,25 +68,25 @@ const productGroups: Record<string, Product[]> = {
       category: "AMR",
       description: "산업 현장 실무에 최적화된 자율 주행 로봇",
       specs: ["전방향 Swerve Drive", "험지 대응 샤시", "정밀 자동 도킹"],
-      image: amrImage,
+      images: [amrImage, aiImage],
     },
   ],
   ai: [
     {
       name: "형강절단 로봇 무인화 AI",
       productId: "cutting-automation-ai",
-      category: "현장 적용형 AI",
+      category: "Physical AI",
       description: "형강 절단 공정의 완전 무인화를 위한 AI 솔루션",
       specs: ["실시간 형상 보정 AI", "자율 경로 생성", "이상 감지 모니터링"],
-      image: aiImage,
+      images: [aiImage, amrImage],
     },
     {
       name: "고숙련자 행동모사 AI",
       productId: "expert-imitation-ai",
-      category: "현장 적용형 AI",
+      category: "Physical AI",
       description: "숙련공의 작업 노하우를 학습하고 재현하는 AI",
       specs: ["멀티모달 데이터 학습", "정밀 동작 재현", "지속적 성능 최적화"],
-      image: aiImage,
+      images: [aiImage, amrImage],
     },
   ],
 }
@@ -95,7 +95,7 @@ const tabs = [
   { id: "cutting", label: "형강절단 로봇" },
   { id: "welding", label: "수용접 로봇" },
   { id: "amr", label: "AMR" },
-  { id: "ai", label: "현장 적용형 AI" },
+  { id: "ai", label: "Physical AI" },
 ]
 
 export default function ProductSliderSection() {
@@ -206,30 +206,30 @@ export default function ProductSliderSection() {
           </div>
 
           {/* Slider */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <Swiper
               modules={[Navigation, Controller]}
               spaceBetween={0}
               slidesPerView={1}
               onSwiper={setSwiperInstance}
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              className="rounded-lg overflow-hidden"
+              className="w-full min-w-0 rounded-lg overflow-hidden"
             >
               {currentProducts.map((product) => (
-                <SwiperSlide key={product.productId}>
-                  <div className="flex flex-col lg:flex-row bg-[#3A3D45] rounded-lg overflow-hidden h-[280px]">
-                    {/* Image */}
-                    <div className="lg:w-1/2 h-full bg-gray-200 flex items-center justify-center">
-                      {product.image ? (
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="text-gray-400 text-sm">이미지 준비중</div>
-                      )}
-                    </div>
+                  <SwiperSlide key={product.productId}>
+                    <div className="flex flex-col lg:flex-row bg-[#3A3D45] rounded-lg overflow-hidden h-[280px]">
+                      {/* Image */}
+                    <div className="lg:w-1/2 h-[280px] bg-gray-200 relative overflow-hidden">
+                        {product.images && product.images.length > 0 ? (
+                          <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">이미지 준비중</div>
+                        )}
+                      </div>
 
                     {/* Content */}
                     <div className="lg:w-1/2 p-5 flex flex-col justify-between">
@@ -266,8 +266,8 @@ export default function ProductSliderSection() {
                         </Button>
                       </div>
                     </div>
-                  </div>
-                </SwiperSlide>
+                    </div>
+                  </SwiperSlide>
               ))}
             </Swiper>
           </div>

@@ -6,13 +6,13 @@ const footerLinks = {
     { label: "절단", href: "/solutions/cutting" },
     { label: "용접", href: "/solutions/welding" },
     { label: "AMR", href: "/solutions/amr" },
-    { label: "현장 적용 AI", href: "/solutions/ai-brain" },
+    { label: "Physical AI", href: "/solutions/ai-brain" },
   ],
   products: [
     { label: "형강절단 로봇", href: "/products?tab=cutting" },
     { label: "수용접 로봇", href: "/products?tab=welding" },
     { label: "AMR", href: "/products?tab=amr" },
-    { label: "AI", href: "/products?tab=ai" },
+    { label: "Physical AI", href: "/products?tab=ai" },
   ],
   company: [
     { label: "회사 소개", href: "/about" },
