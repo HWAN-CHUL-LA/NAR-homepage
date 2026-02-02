@@ -17,9 +17,9 @@ const milestones = [
   { year: "2010", event: "회사 설립, 산업용 로봇 연구 시작" },
   { year: "2015", event: "첫 형강 절단 자동화 시스템 개발" },
   { year: "2018", event: "HD현대중공업 첫 납품" },
-  { year: "2020", event: "Rugged AMR 프로토타입 완성" },
+  { year: "2020", event: "산업용 AMR 프로토타입 완성" },
   { year: "2022", event: "한화오션 AMR 시스템 납품" },
-  { year: "2024", event: "AI Brain Robot 개발 착수" },
+  { year: "2024", event: "현장 적용 AI 기술 개발 착수" },
   { year: "2025", event: "토탈 무인 파이프라인 통합 솔루션 출시" },
 ];
 

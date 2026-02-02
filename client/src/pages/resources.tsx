@@ -10,7 +10,7 @@ import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
 const resources = {
   brochures: [
     {
-      title: "Smart Cutting System 브로슈어",
+      title: "형강절단 로봇 브로슈어",
       description:
         "형강 절단 토탈 솔루션의 주요 기능과 적용 사례를 담은 제품 소개서입니다.",
       type: "brochure" as const,
@@ -18,7 +18,15 @@ const resources = {
       thumbnail: cuttingImage,
     },
     {
-      title: "산업현장 특화형 Omnidirectional AMR 브로슈어",
+      title: "수용접 로봇 브로슈어",
+      description:
+        "협동 로봇 기반 수용접 자동화 솔루션의 주요 특징을 소개합니다.",
+      type: "brochure" as const,
+      fileSize: "PDF 3.1MB",
+      thumbnail: aiImage,
+    },
+    {
+      title: "AMR 브로슈어",
       description:
         "산업현장 특화형 AMR의 기술 사양과 적용 가능 시나리오를 소개합니다.",
       type: "brochure" as const,
@@ -26,7 +34,7 @@ const resources = {
       thumbnail: amrImage,
     },
     {
-      title: "AI Brain Robot 기술 소개",
+      title: "현장 적용 AI 기술 소개",
       description:
         "Physical-AI 기반 지능형 자동화 솔루션의 개발 방향과 로드맵을 공유합니다.",
       type: "brochure" as const,
@@ -36,7 +44,7 @@ const resources = {
   ],
   videos: [
     {
-      title: "Smart Cutting System 데모 영상",
+      title: "형강절단 로봇 데모 영상",
       description:
         "형강 인입부터 절단, 배출까지 무인 운영 과정을 보여주는 데모 영상입니다.",
       type: "video" as const,
@@ -44,7 +52,7 @@ const resources = {
       videoUrl: "https://res.cloudinary.com/dzu2wygbi/video/upload/형강절단로봇_최종본_zd8na3.mov",
     },
     {
-      title: "Rugged AMR 주행 테스트",
+      title: "AMR 주행 테스트",
       description:
         "비정형 바닥 환경에서의 전방향 주행과 자동 도킹 테스트 영상입니다.",
       type: "video" as const,

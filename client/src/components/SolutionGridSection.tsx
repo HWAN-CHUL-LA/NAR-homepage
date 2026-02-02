@@ -15,9 +15,9 @@ const solutions = [
   },
   {
     title: "용접",
-    description: "숙련공의 노하우를 데이터화하여 로봇에 이식하는 AI 기반 지능형 용접 자동화 솔루션.",
+    description: "협동 로봇과 정밀 제어 기술을 결합한 최적의 용접 솔루션. 복잡한 구조물도 균일한 품질로 자동 용접합니다.",
     icon: Flame,
-    href: "/solutions/ai-brain",
+    href: "/solutions/welding",
     image: aiImage,
   },
   {
@@ -29,7 +29,7 @@ const solutions = [
   },
   {
     title: "현장 적용 AI",
-    description: "Physical-AI 기반 적응형 제어. 현장 변동에 실시간으로 대응하는 차세대 자동화 기술.",
+    description: "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다.",
     icon: Brain,
     href: "/solutions/ai-brain",
     image: aiImage,

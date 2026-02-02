@@ -3,14 +3,16 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerLinks = {
   solutions: [
-    { label: "Smart Cutting System", href: "/solutions/cutting" },
-    { label: "산업현장 특화형 Omnidirectional AMR", href: "/solutions/amr" },
-    { label: "AI Brain Robot", href: "/solutions/ai-brain" },
+    { label: "절단", href: "/solutions/cutting" },
+    { label: "용접", href: "/solutions/welding" },
+    { label: "AMR", href: "/solutions/amr" },
+    { label: "현장 적용 AI", href: "/solutions/ai-brain" },
   ],
   products: [
-    { label: "Cutting System Products", href: "/products#cutting" },
-    { label: "Rugged AMR Products", href: "/products#amr" },
-    { label: "AI Brain Robot Products", href: "/products#ai-brain" },
+    { label: "형강절단 로봇", href: "/products?tab=cutting" },
+    { label: "수용접 로봇", href: "/products?tab=welding" },
+    { label: "AMR", href: "/products?tab=amr" },
+    { label: "AI", href: "/products?tab=ai" },
   ],
   company: [
     { label: "회사 소개", href: "/about" },
@@ -32,25 +34,25 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
             <Link href="/" data-testid="footer-logo">
-              <span className="text-xl font-bold">ROBOTICS</span>
+              <span className="text-xl font-bold">NeoArcRobotics</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              조선·건설 제조 혁신을 위한
+              지능형 로봇과 AI 기술로
               <br />
-              토탈 자동화 솔루션
+              제조 현장의 새로운 가치를 창출합니다
             </p>
-            <div className="mt-6 space-y-2">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4" />
-                <span>contact@robotics.co.kr</span>
+            <div className="mt-6 space-y-3">
+              <div className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Mail className="w-5 h-5 mt-0.5 shrink-0" />
+                <span>ys.kwon@neoarcrobotics.com</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4" />
-                <span>02-1234-5678</span>
+              <div className="flex items-start gap-3 text-sm text-muted-foreground">
+                <Phone className="w-5 h-5 mt-0.5 shrink-0" />
+                <span>053-213-2132</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <span>서울특별시 강남구</span>
+              <div className="flex items-start gap-3 text-sm text-muted-foreground">
+                <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
+                <span>대구광역시 북구 대학로 99-4(산격동)<br/>창업놀이터 3층 305호</span>
               </div>
             </div>
           </div>
@@ -130,7 +132,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2025 ROBOTICS. All rights reserved.
+            © 2026 NeoArcRobotics. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" data-testid="footer-privacy">

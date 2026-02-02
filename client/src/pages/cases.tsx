@@ -348,12 +348,22 @@ export default function CasesPage() {
                             caseStudy.solution.toLowerCase().includes("cutting") ? (
                               <Badge variant="outline" className="text-xs font-normal">
                                 <Cpu className="w-3 h-3 mr-1" />
-                                Cutting
+                                절단
+                              </Badge>
+                            ) : caseStudy.solution.toLowerCase().includes("welding") ? (
+                              <Badge variant="outline" className="text-xs font-normal">
+                                <Cpu className="w-3 h-3 mr-1" />
+                                용접
                               </Badge>
                             ) : caseStudy.solution.toLowerCase().includes("amr") ? (
                               <Badge variant="outline" className="text-xs font-normal">
                                 <Bot className="w-3 h-3 mr-1" />
                                 AMR
+                              </Badge>
+                            ) : caseStudy.solution.toLowerCase().includes("ai") ? (
+                              <Badge variant="outline" className="text-xs font-normal">
+                                <Cpu className="w-3 h-3 mr-1" />
+                                AI
                               </Badge>
                             ) : null}
                           </div>

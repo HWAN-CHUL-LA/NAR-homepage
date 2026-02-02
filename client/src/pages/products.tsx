@@ -11,29 +11,26 @@ import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
 // 제품 데이터
 const productGroups = {
   cutting: [
-    { name: "Operating SW", productId: "operating-sw", description: "네스팅/보정/운영을 위한 통합 소프트웨어 패키지" },
-    { name: "Sensing Package", productId: "sensing-package", description: "거리/비전 센서 기반 형상 인식 및 보정 시스템" },
-    { name: "Infeed Module", productId: "infeed-module", description: "컨베이어/푸셔/트래커 기반 자재 인입 시스템" },
-    { name: "Laser Cutting Cell", productId: "laser-cutting-cell", description: "고정밀 파이버 레이저 기반 형강 절단 셀" },
-    { name: "Plasma Cutting Cell", productId: "plasma-cutting-cell", description: "고속 플라즈마 기반 중후판 형강 절단 셀" },
+    { name: "PCRS-standard", productId: "pcrs-standard", description: "표준형 형강 절단 로봇 시스템" },
+    { name: "PCRS-Extended", productId: "pcrs-extended", description: "확장형 형강 절단 로봇 시스템" },
+    { name: "LCRS - standard", productId: "lcrs-standard", description: "표준형 레이저 형강 절단 로봇 시스템" },
+  ],
+  welding: [
+    { name: "수용접 절단 로봇", productId: "welding-cutting-robot", description: "수용접 및 절단 기능을 결합한 협동 로봇 시스템" },
   ],
   amr: [
-    { name: "Rugged AMR Base", productId: "rugged-amr-base", description: "Swerve Drive + Rocker-Bogie 기반 험지 대응 AMR 플랫폼" },
-    { name: "Auto Docking Module", productId: "auto-docking-module", description: "정밀 자동 도킹을 위한 센서 및 제어 모듈" },
-    { name: "Payload Modules", productId: "payload-modules", description: "스크랩/팔레트/랙/컨베이어 등 맞춤형 상부 모듈" },
-    { name: "Fleet Management", productId: "fleet-management", description: "다수 AMR 통합 운영을 위한 Fleet 관리 시스템" },
+    { name: "현장적용형 AMR", productId: "field-amr", description: "산업 현장 실무에 최적화된 자율 주행 로봇" },
   ],
   ai: [
-    { name: "Smart Teaching Tool", productId: "smart-teaching-tool", description: "숙련공의 작업 감각을 데이터화하는 스마트 티칭 도구" },
-    { name: "3D Vision Package", productId: "3d-vision-package", description: "고정밀 3D 형상 인식을 위한 비전 시스템" },
-    { name: "AI Control Module", productId: "ai-control-module", description: "Physical-AI 기반 적응형 로봇 제어 모듈" },
+    { name: "형강절단 로봇 무인화 AI", productId: "cutting-automation-ai", description: "형강 절단 공정의 완전 무인화를 위한 AI 솔루션" },
+    { name: "고숙련자 행동모사 AI", productId: "expert-imitation-ai", description: "숙련공의 작업 노하우를 학습하고 재현하는 AI" },
   ],
 }
 
 // 카테고리별 공통 정보
 const categoryInfo = {
   cutting: {
-    title: "Cutting System",
+    title: "형강절단 로봇",
     subtitle: "플라즈마 / 레이저 형강 절단 토탈 시스템",
     description: "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현합니다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공하며, 조선·건설 현장에 최적화된 토탈 솔루션입니다.",
     image: cuttingImage,
@@ -49,8 +46,25 @@ const categoryInfo = {
       { title: "간편한 설치", desc: "기존 설비와의 인터페이스를 고려한 모듈화 설계로 빠른 도입 가능" },
     ],
   },
+  welding: {
+    title: "수용접 로봇",
+    subtitle: "협동 로봇 기반 수용접 자동화 솔루션",
+    description: "숙련된 용접공의 노하우와 로봇의 정밀함을 결합했습니다. 협동 로봇을 활용하여 좁은 공간에서도 안전하게 작업하며, 일관된 용접 품질을 보장합니다.",
+    image: aiImage,
+    features: [
+      { icon: Cog, title: "정밀 궤적 제어", desc: "균일한 용접 비드 생성" },
+      { icon: Shield, title: "안전 협업", desc: "작업자 충돌 감지 및 보호" },
+      { icon: Zap, title: "간편 티칭", desc: "비숙련자도 쉽게 경로 설정" },
+      { icon: Target, title: "품질 관리", desc: "용접 데이터 실시간 모니터링" },
+    ],
+    highlights: [
+      { title: "유연한 설치", desc: "컴팩트한 설계로 기존 작업장에 즉시 투입 가능" },
+      { title: "비용 절감", desc: "인건비 절감 및 용접 소모품 최적화" },
+      { title: "작업 환경 개선", desc: "위험하고 고된 용접 작업을 로봇이 대체" },
+    ],
+  },
   amr: {
-    title: "Rugged AMR",
+    title: "AMR",
     subtitle: "산업현장 특화형 Omnidirectional AMR",
     description: "어떤 바닥 조건에서도 흔들림 없이. 전방향으로 움직이는 산업현장형 AMR 로봇입니다. Swerve Drive 기반 전방향 주행과 Rocker-Bogie 샤시로 험지 대응 설계를 갖추고 있습니다.",
     image: amrImage,
@@ -67,9 +81,9 @@ const categoryInfo = {
     ],
   },
   ai: {
-    title: "AI Brain Robot",
-    subtitle: "AI 용접 자동화 솔루션",
-    description: "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다. Physical-AI 기반으로 현장 변동에 적응하는 차세대 용접 자동화를 구현합니다.",
+    title: "AI",
+    subtitle: "Physical-AI 기반 자동화 솔루션",
+    description: "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다. Physical-AI 기반으로 현장 변동에 적응하는 차세대 자동화를 구현합니다.",
     image: aiImage,
     features: [
       { icon: Cog, title: "멀티모달 융합", desc: "3D Vision + Smart Teaching" },
@@ -78,21 +92,22 @@ const categoryInfo = {
       { icon: Shield, title: "Physical-AI", desc: "실시간 학습 기반 제어" },
     ],
     highlights: [
-      { title: "숙련공 노하우 디지털화", desc: "베테랑 용접사의 작업 패턴을 데이터화하여 로봇에 이식" },
-      { title: "적응형 제어", desc: "용접 중 발생하는 변수(갭, 변형 등)에 실시간으로 대응" },
-      { title: "품질 일관성", desc: "AI 기반 품질 모니터링으로 균일한 용접 품질 확보" },
+      { title: "숙련공 노하우 디지털화", desc: "베테랑 작업자의 패턴을 데이터화하여 로봇에 이식" },
+      { title: "적응형 제어", desc: "작업 중 발생하는 변수(공차, 변형 등)에 실시간으로 대응" },
+      { title: "품질 일관성", desc: "AI 기반 품질 모니터링으로 균일한 작업 결과 확보" },
     ],
   },
 }
 
 const categories = [
-  { id: "cutting", label: "Cutting System", icon: Cpu },
-  { id: "amr", label: "Rugged AMR", icon: Bot },
-  { id: "ai", label: "AI Brain Robot", icon: Cog },
+  { id: "cutting", label: "형강절단 로봇", icon: Cpu },
+  { id: "welding", label: "수용접 로봇", icon: Cog },
+  { id: "amr", label: "AMR", icon: Bot },
+  { id: "ai", label: "AI", icon: Cog },
 ]
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState<"cutting" | "amr" | "ai">("cutting")
+  const [activeCategory, setActiveCategory] = useState<"cutting" | "welding" | "amr" | "ai">("cutting")
   const currentInfo = categoryInfo[activeCategory]
   const currentProducts = productGroups[activeCategory]
 

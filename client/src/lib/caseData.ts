@@ -88,9 +88,9 @@ export const caseStudies: CaseStudy[] = [
     {
       id: "hanwha-plasma-50m-install",
       title: "국내 최대 50m 초장축 형강 플라즈마 절단 라인 구축",
-      client: "한화오션",
-      industry: "조선 (Shipbuilding)",
-      solution: "Mega-Scale Plasma Infrastructure",
+    client: "한화오션",
+    industry: "조선",
+    solution: "Mega-Scale Plasma Infrastructure",
       challenge: "초대형 선박 블록 생산을 위한 50m 장축 자재의 원스톱(One-Stop) 가공 인프라 확보",
       result: "국내 최대 길이(50m) 가공 설비 구축 및 대형 자재 양산 체계 완성",
       image: cuttingImage, // 50m 설비의 웅장함이 돋보이는 사진 추천
@@ -142,7 +142,7 @@ export const caseStudies: CaseStudy[] = [
     id: "sme-custom-solution",
     title: "중소 제조 현장 맞춤형 형강 절단 장비 및 전용 SW 구축",
     client: "중소 형강 가공 전문기업 B사",
-    industry: "건설 현장 / 건축 자재 (Construction)",
+    industry: "조선",
     solution: "Customized Steel Cutting System & Dedicated OS",
     challenge: "기성품 장비의 높은 도입 장벽(비용/크기)과 현장 맞춤형 기능 부재",
     result: "현장 요구사항 100% 반영된 장비 구축, 비숙련자 운용 효율 극대화",
@@ -222,24 +222,23 @@ export function getUniqueSolutions(): string[] {
 // 산업군 목록 (UI용)
 export const industryOptions = [
   { id: "조선", label: "조선" },
-  { id: "건설", label: "건설 현장" },
-  { id: "물류", label: "물류" },
-  { id: "제조", label: "제조" },
+  { id: "건설", label: "건설" },
 ]
 
 // 솔루션 목록 (UI용)
 export const solutionOptions = [
-  { id: "cutting", label: "Cutting System" },
-  { id: "amr", label: "Rugged AMR" },
-  { id: "ai", label: "AI Brain Robot" },
+  { id: "cutting", label: "절단" },
+  { id: "welding", label: "용접" },
+  { id: "amr", label: "AMR" },
+  { id: "ai", label: "현장 적용 AI" },
 ]
 
 // 제품 목록 (UI용)
 export const productOptions = [
-  { id: "plasma", label: "플라즈마 절단" },
-  { id: "laser", label: "레이저 절단" },
-  { id: "amr-base", label: "AMR Base" },
-  { id: "fleet", label: "Fleet Management" },
+  { id: "cutting", label: "형강절단 로봇" },
+  { id: "welding", label: "수용접 로봇" },
+  { id: "amr", label: "AMR" },
+  { id: "ai", label: "AI" },
 ]
 
 // 필터링 함수

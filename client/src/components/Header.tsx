@@ -20,19 +20,20 @@ import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
 // 통합 메뉴 데이터 (모든 메뉴에 이미지 카드 3개씩)
 const menuCategories = {
   solutions: [
-    { title: "Cutting System", description: "형강 절단 토탈 솔루션", image: cuttingImage, href: "/solutions/cutting" },
-    { title: "Rugged AMR", description: "산업현장 특화형 AMR", image: amrImage, href: "/solutions/amr" },
-    { title: "AI Brain Robot", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
+    { title: "절단", description: "형강 절단 토탈 솔루션", image: cuttingImage, href: "/solutions/cutting" },
+    { title: "용접", description: "AI 기반 정밀 용접 솔루션", image: aiImage, href: "/solutions/welding" },
+    { title: "AMR", description: "산업현장 특화형 AMR", image: amrImage, href: "/solutions/amr" },
+    { title: "현장 적용 AI", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
   ],
   products: [
-    { title: "Cutting System", description: "형강 절단 제품", image: cuttingImage, href: "/products?tab=cutting" },
-    { title: "Rugged AMR", description: "AMR 제품", image: amrImage, href: "/products?tab=amr" },
-    { title: "AI Brain Robot", description: "AI 로봇 제품", image: aiImage, href: "/products?tab=ai" },
+    { title: "형강절단 로봇", description: "고정밀 형강 절단 시스템", image: cuttingImage, href: "/products?tab=cutting" },
+    { title: "수용접 로봇", description: "협동 로봇 기반 수용접 자동화", image: aiImage, href: "/products?tab=welding" },
+    { title: "AMR", description: "산업용 전방향 AMR", image: amrImage, href: "/products?tab=amr" },
+    { title: "AI", description: "산업용 AI 솔루션", image: aiImage, href: "/products?tab=ai" },
   ],
   cases: [
-    { title: "조선 산업", description: "조선소 적용 사례", image: cuttingImage, href: "/cases?industry=조선" },
-    { title: "건설 현장", description: "건설 현장 사례", image: amrImage, href: "/cases?industry=건설" },
-    { title: "물류 자동화", description: "물류 자동화 사례", image: aiImage, href: "/cases" },
+    { title: "조선", description: "한화오션, 현대중공업, 한빛이엔지", image: cuttingImage, href: "/cases?industry=조선" },
+    { title: "건설", description: "건설 현장 적용 사례", image: amrImage, href: "/cases?industry=건설" },
   ],
   resources: [
     { title: "브로슈어", description: "제품 카탈로그", image: cuttingImage, href: "/resources#brochure" },
@@ -107,7 +108,7 @@ export default function Header() {
                   솔루션
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 w-[540px] lg:w-[720px]">
                     {menuCategories.solutions.map((item) => (
                       <MenuCard key={item.href} item={item} />
                     ))}
@@ -121,7 +122,7 @@ export default function Header() {
                   제품
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 w-[540px] lg:w-[720px]">
                     {menuCategories.products.map((item) => (
                       <MenuCard key={item.href} item={item} />
                     ))}
@@ -135,7 +136,7 @@ export default function Header() {
                   적용 사례
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid grid-cols-3 gap-4 p-6 w-[540px]">
+                  <div className="grid grid-cols-2 gap-4 p-6 w-[360px]">
                     {menuCategories.cases.map((item) => (
                       <MenuCard key={item.href} item={item} />
                     ))}

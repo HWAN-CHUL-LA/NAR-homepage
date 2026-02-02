@@ -38,7 +38,7 @@ export default function WhyUsSection() {
             왜 NeoArcRobotics인가?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            **"속도와 신뢰, 결과로 증명하기 때문입니다."**<br/>
+            "속도와 신뢰, 결과로 증명하기 때문입니다."<br/>
             설립 1년 만에 AMR 핵심 기술 특허 3건 확보 및 주행 플랫폼 개발 완료. 
             그리고 HD현대중공업, 한화오션 등 글로벌 Top-tier 기업이 선택한 형강 가공 솔루션까지. 
             네오아크로보틱스는 압도적인 기술 실행력으로 귀사의 가장 확실한 자동화 파트너가 되겠습니다.

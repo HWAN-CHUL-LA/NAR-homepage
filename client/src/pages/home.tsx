@@ -24,8 +24,6 @@ export default function Home() {
         <AboutGridSection />
         {/* 기존 섹션들 (유지) */}
         <StatsSection />
-        <SolutionsGrid />
-        <CaseStudiesSection />
         <WhyUsSection />
         <CTASection />
       </main>

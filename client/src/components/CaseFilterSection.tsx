@@ -7,21 +7,23 @@ import { caseStudies } from "@/lib/caseData"
 const industryFilters = [
   { id: "all", label: "전체" },
   { id: "조선", label: "조선" },
-  { id: "건설", label: "건설 현장" },
+  { id: "건설", label: "건설" },
 ]
 
 const solutionOptions = [
-  { value: "all", label: "Solutions" },
-  { value: "cutting", label: "Cutting System" },
+  { value: "all", label: "솔루션" },
+  { value: "cutting", label: "절단" },
+  { value: "welding", label: "용접" },
   { value: "amr", label: "AMR" },
-  { value: "clamping", label: "Clamping" },
+  { value: "ai", label: "현장 적용 AI" },
 ]
 
 const productOptions = [
-  { value: "all", label: "Products" },
-  { value: "plasma", label: "Plasma" },
-  { value: "laser", label: "Laser" },
-  { value: "custom", label: "Custom" },
+  { value: "all", label: "제품" },
+  { value: "형강절단", label: "형강절단 로봇" },
+  { value: "수용접", label: "수용접 로봇" },
+  { value: "amr", label: "AMR" },
+  { value: "ai", label: "AI" },
 ]
 
 export default function CaseFilterSection() {
@@ -53,7 +55,7 @@ export default function CaseFilterSection() {
           <div className="lg:w-1/5 lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-2 mb-2">
               <h2 className="text-xl lg:text-2xl font-bold text-gray-900">
-                Industry Cases
+                Industry cases
               </h2>
               <Plus className="w-4 h-4 text-primary" />
             </div>

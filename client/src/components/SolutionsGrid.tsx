@@ -8,7 +8,7 @@ const amrImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/
 // todo: remove mock functionality - replace with API data
 const solutions = [
   {
-    title: "플라즈마 / 레이저 형강 절단 토탈 시스템",
+    title: "절단",
     description:
       "소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 실현하다. 2D부터 3D까지 원스톱 형강 절단 자동화를 제공합니다.",
     features: [
@@ -21,7 +21,20 @@ const solutions = [
     image: cuttingImage,
   },
   {
-    title: "산업현장 특화형 Omnidirectional AMR",
+    title: "용접",
+    description:
+      "협동 로봇과 정밀 제어 기술을 결합한 최적의 용접 솔루션. 복잡한 구조물도 균일한 품질로 자동 용접합니다.",
+    features: [
+      "고품질 균일 용접: 정밀 궤적 제어 기술",
+      "협동 로봇 활용: 작업자와 안전한 공존",
+      "빠른 공정 전환: 다양한 작업 대상 대응",
+    ],
+    icon: Cog,
+    href: "/solutions/welding",
+    image: aiImage,
+  },
+  {
+    title: "AMR",
     description:
       "어떤 바닥 조건에서도 흔들림 없이. 전방향으로 움직이는 산업현장형 AMR 로봇. 험지 대응 설계와 자동 도킹 기능을 제공합니다.",
     features: [
@@ -34,7 +47,7 @@ const solutions = [
     image: amrImage,
   },
   {
-    title: "AI 용접 자동화 솔루션",
+    title: "현장 적용 AI",
     description:
       "숙련공의 감각을 데이터로, 로봇의 실력으로. 3D 비전과 스마트 티칭을 결합한 지능형 자동화 솔루션입니다.",
     features: [
@@ -42,7 +55,7 @@ const solutions = [
       "숙련 행동 복제: 안정적인 품질 목표 제어",
       "현장 변동 대응: 비정형 변수 적응",
     ],
-    icon: Cog,
+    icon: Cpu,
     href: "/solutions/ai-brain",
     image: aiImage,
   },
