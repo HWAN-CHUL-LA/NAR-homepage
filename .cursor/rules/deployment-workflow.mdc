@@ -1,0 +1,37 @@
+---
+description: 빌드 후 Vercel 배포를 위한 워크플로우 가이드
+alwaysApply: true
+---
+
+# 빌드 및 배포 워크플로우
+
+## 저장소 구조
+
+- **origin**: `NAR-homepage.git` (개발)
+- **vercel**: `NAR_homepage_vercel.git` (배포, main 브랜치)
+
+## 빌드 후 배포 절차
+
+`npm run build` 실행 후 반드시 다음 단계를 수행:
+
+### 1. 빌드 결과물 복사
+
+```powershell
+Remove-Item -Path "Robot-Solutions/vercel-deploy/assets/*" -Force
+Copy-Item -Path "dist/public/assets/*" -Destination "Robot-Solutions/vercel-deploy/assets/" -Force
+Copy-Item -Path "dist/public/index.html" -Destination "Robot-Solutions/vercel-deploy/index.html" -Force
+```
+
+### 2. 커밋 및 푸시
+
+```bash
+git add Robot-Solutions/vercel-deploy/
+git commit -m "build: update vercel-deploy with latest build"
+git push origin <branch>
+git push vercel <branch>:main
+```
+
+## 중요
+
+- `dist/`는 gitignore됨 → `Robot-Solutions/vercel-deploy/`로 복사 필수
+- Vercel 배포는 `vercel` remote의 `main` 브랜치 푸시 시 자동 트리거
