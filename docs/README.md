@@ -127,6 +127,7 @@ npm run build
 Vercel 재배포 절차(원격 저장소 푸시, `vercel-deploy` 동기화, 대시보드 확인)는 아래 문서를 참고하세요.
 
 - [빌드 및 배포 가이드](./DEPLOYMENT.md)
+- [단일 GitHub 저장소 + Vercel 연동 가이드](./VERCEL_SINGLE_REPO_GUIDE.md)
 
 ## 프로덕션 실행
 
