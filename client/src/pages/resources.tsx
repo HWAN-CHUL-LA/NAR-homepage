@@ -2,9 +2,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ResourceCard from "@/components/ResourceCard";
 import CTASection from "@/components/CTASection";
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png";
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
+import {
+  remoteCuttingImage as cuttingImage,
+  remoteAmrImage as amrImage,
+  remoteAiWeldingImage as aiImage,
+} from "@/lib/remoteImageUrls"
 
 // todo: remove mock functionality - replace with API data
 const resources = {

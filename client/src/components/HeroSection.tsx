@@ -1,7 +1,7 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@assets/generated_images/shipyard_industrial_facility_exterior.png";
+import { Link } from "wouter"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Play } from "lucide-react"
+import { remoteShipyardHeroImage as heroImage } from "@/lib/remoteImageUrls"
 
 export default function HeroSection() {
   return (

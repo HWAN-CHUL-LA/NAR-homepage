@@ -4,7 +4,7 @@ import SolutionPageHero from "@/components/SolutionPageHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
 import { Cog, Eye, Hand, Brain, RefreshCw, Rocket } from "lucide-react";
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
+import { remoteAiWeldingImage as aiImage } from "@/lib/remoteImageUrls"
 
 const features = [
   {

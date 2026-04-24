@@ -1,6 +1,6 @@
 import SolutionCard from "../SolutionCard";
 import { Cpu } from "lucide-react";
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
+import { remoteCuttingImage as cuttingImage } from "@/lib/remoteImageUrls"
 
 export default function SolutionCardExample() {
   return (

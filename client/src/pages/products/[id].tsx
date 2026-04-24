@@ -121,7 +121,16 @@ export default function ProductDetailPage() {
               {/* 미디어 영역 */}
               <div className="relative">
                 <div className="aspect-video rounded-xl overflow-hidden bg-muted shadow-2xl relative">
-                  {product.videoUrl ? (
+                  {product.youtubeVideoId ? (
+                    <iframe
+                      className="absolute inset-0 h-full w-full border-0"
+                      src={`https://www.youtube-nocookie.com/embed/${encodeURIComponent(product.youtubeVideoId)}`}
+                      title={`${product.name} 소개 동영상`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      referrerPolicy="strict-origin-when-cross-origin"
+                    />
+                  ) : product.videoUrl ? (
                     <>
                       <video
                         ref={videoRef}

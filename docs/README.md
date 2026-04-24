@@ -122,6 +122,12 @@ Cursor 채팅에서 다음과 같이 요청하면 됩니다:
 npm run build
 ```
 
+## 배포 (Vercel)
+
+Vercel 재배포 절차(원격 저장소 푸시, `vercel-deploy` 동기화, 대시보드 확인)는 아래 문서를 참고하세요.
+
+- [빌드 및 배포 가이드](./DEPLOYMENT.md)
+
 ## 프로덕션 실행
 
 ```bash

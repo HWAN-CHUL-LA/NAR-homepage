@@ -15,6 +15,8 @@ export interface ProductDetail {
     value: string
   }[]
   benefits: string[]
+  /** 유튜브 동영상 ID (예: https://youtu.be/xxx 의 xxx) */
+  youtubeVideoId?: string
   videoUrl?: string
   imageUrl?: string
   relatedProducts: string[]
@@ -109,7 +111,8 @@ export const productDetails: Record<string, ProductDetail> = {
       { label: "주행 방식", value: "LiDAR SLAM" }
     ],
     benefits: ["물류 자동화 실현", "인적 오류 방지"],
-    relatedProducts: ["welding-cutting-robot"]
+    relatedProducts: ["welding-cutting-robot"],
+    youtubeVideoId: "98eiIfM_3D0"
   },
   "cutting-automation-ai": {
     id: "cutting-automation-ai",

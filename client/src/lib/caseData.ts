@@ -1,5 +1,8 @@
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
+import {
+  caseHdHyundaiScrapClamping,
+  caseHanwhaPlasma50m,
+  caseSmeCustom,
+} from "@/lib/caseStudyCoverImages"
 import { getVideoUrl, MEDIA_IDS } from "./cloudinary"
 
 export interface CaseStudy {
@@ -40,7 +43,7 @@ export const caseStudies: CaseStudy[] = [
     solution: "Auxiliary Clamping & Discharge Unit",
     challenge: "인입 푸셔(Input Pusher)의 고정 한계 구간에서 소재 떨림 발생, 끝단부 가공 정밀도 저하",
     result: "잔재부(Last Piece) 가공 오차 0.5mm 이내 달성, 자재 수율 극대화",
-    image: cuttingImage,
+    image: caseHdHyundaiScrapClamping,
     videoUrl: "https://res.cloudinary.com/dzu2wygbi/video/upload/v1766045582/%EB%B0%B0%EC%B6%9C%EB%B3%B4%EC%A1%B0%EC%A0%88%EB%8B%A81_gzxmut.mp4",
     overview: "형강 가공의 난제였던 '마지막 잔재 구간(End-piece)'의 정밀도를 확보한 프로젝트입니다. 기존 인입 푸셔가 더 이상 소재를 밀어줄 수 없는 끝단 구간에서 소재가 흔들려 원형/타원 홀 가공 품질이 떨어지는 문제를 해결하기 위해, '보조 배출 클램핑 장치'를 개발했습니다. 이를 통해 마지막 순간까지 소재를 견고하게 파지하여 전 구간 균일한 가공 품질을 실현했습니다.",
     problemDetails: [
@@ -93,7 +96,7 @@ export const caseStudies: CaseStudy[] = [
     solution: "Mega-Scale Plasma Infrastructure",
       challenge: "초대형 선박 블록 생산을 위한 50m 장축 자재의 원스톱(One-Stop) 가공 인프라 확보",
       result: "국내 최대 길이(50m) 가공 설비 구축 및 대형 자재 양산 체계 완성",
-      image: cuttingImage, // 50m 설비의 웅장함이 돋보이는 사진 추천
+      image: caseHanwhaPlasma50m,
       videoUrl: getVideoUrl(MEDIA_IDS.CUTTING_ROBOT),
       overview: "한화오션 거제 사업장에 국내 최대 규모인 '50m 초장축 형강 가공 전용 라인'을 성공적으로 구축한 사례입니다. 초대형 선박 건조에 필요한 50m 길이의 대형 형강을 분할 없이 한 번에 가공할 수 있는 'Mega-Scale' 생산 기지를 조성하여, 대형 조선소의 제조 역량을 한 단계 확장했습니다.",
       problemDetails: [ // 여기서는 '구축 배경/목표'로 해석
@@ -146,7 +149,7 @@ export const caseStudies: CaseStudy[] = [
     solution: "Customized Steel Cutting System & Dedicated OS",
     challenge: "기성품 장비의 높은 도입 장벽(비용/크기)과 현장 맞춤형 기능 부재",
     result: "현장 요구사항 100% 반영된 장비 구축, 비숙련자 운용 효율 극대화",
-    image: cuttingImage,
+    image: caseSmeCustom,
     videoUrl: getVideoUrl(MEDIA_IDS.CUTTING_ROBOT),
     overview: "대형 외산 장비 도입이 부담스러운 중소형 가공 업체를 위해, 현장의 가용 공간과 예산, 그리고 작업자의 숙련도를 고려한 '맞춤형 형강 절단 솔루션'을 공급했습니다. 특히 현장 근로자들의 요구사항을 반영하여, 복잡한 기능은 덜어내고 꼭 필요한 기능만 직관적으로 담은 '전용 운용 소프트웨어'를 커스터마이징하여 제공했습니다.",
     problemDetails: [

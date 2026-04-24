@@ -10,66 +10,92 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import {
+  Menu,
+  Ship,
+  Building2,
+  BookOpen,
+  Video,
+  FileText,
+  type LucideIcon,
+} from "lucide-react"
 
-// 이미지 import
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
+import plasmaGridImage from "@assets/Plasma1.JPG"
+import weldingGridImage from "@assets/용접사진2.png"
+import {
+  remoteAmrImage as amrImage,
+  remoteAiWeldingImage as aiImage,
+} from "@/lib/remoteImageUrls"
 
-// 통합 메뉴 데이터 (모든 메뉴에 이미지 카드 3개씩)
-const menuCategories = {
+type MenuCardItem =
+  | { title: string; description: string; href: string; image: string }
+  | { title: string; description: string; href: string; icon: LucideIcon }
+
+// 솔루션·제품: 절단/용접은 홈과 동일 로컬 이미지. 적용 사례·리소스: 팝오버와 어울리는 아이콘만 사용
+const menuCategories: {
+  solutions: Extract<MenuCardItem, { image: string }>[]
+  products: Extract<MenuCardItem, { image: string }>[]
+  cases: MenuCardItem[]
+  resources: MenuCardItem[]
+} = {
   solutions: [
-    { title: "절단", description: "형강 절단 토탈 솔루션", image: cuttingImage, href: "/solutions/cutting" },
-    { title: "용접", description: "AI 기반 정밀 용접 솔루션", image: aiImage, href: "/solutions/welding" },
+    { title: "절단", description: "형강 절단 토탈 솔루션", image: plasmaGridImage, href: "/solutions/cutting" },
+    { title: "용접", description: "AI 기반 정밀 용접 솔루션", image: weldingGridImage, href: "/solutions/welding" },
     { title: "AMR", description: "산업현장 특화형 AMR", image: amrImage, href: "/solutions/amr" },
     { title: "Physical AI", description: "Physical-AI 기반 자동화", image: aiImage, href: "/solutions/ai-brain" },
   ],
   products: [
-    { title: "형강절단 로봇", description: "고정밀 형강 절단 시스템", image: cuttingImage, href: "/products?tab=cutting" },
-    { title: "수용접 로봇", description: "협동 로봇 기반 수용접 자동화", image: aiImage, href: "/products?tab=welding" },
+    { title: "형강절단 로봇", description: "고정밀 형강 절단 시스템", image: plasmaGridImage, href: "/products?tab=cutting" },
+    { title: "수용접 로봇", description: "협동 로봇 기반 수용접 자동화", image: weldingGridImage, href: "/products?tab=welding" },
     { title: "AMR", description: "산업용 전방향 AMR", image: amrImage, href: "/products?tab=amr" },
     { title: "Physical AI", description: "산업용 AI 솔루션", image: aiImage, href: "/products?tab=ai" },
   ],
   cases: [
-    { title: "조선", description: "한화오션, 현대중공업, 한빛이엔지", image: cuttingImage, href: "/cases?industry=조선" },
-    { title: "건설", description: "건설 현장 적용 사례", image: amrImage, href: "/cases?industry=건설" },
+    { title: "조선", description: "한화오션, 현대중공업, 한빛이엔지", icon: Ship, href: "/cases?industry=조선" },
+    { title: "건설", description: "건설 현장 적용 사례", icon: Building2, href: "/cases?industry=건설" },
   ],
   resources: [
-    { title: "브로슈어", description: "제품 카탈로그", image: cuttingImage, href: "/resources#brochure" },
-    { title: "영상 자료", description: "데모 영상", image: amrImage, href: "/resources#videos" },
-    { title: "기술 자료", description: "스펙시트", image: aiImage, href: "/resources#downloads" },
+    { title: "브로슈어", description: "제품 카탈로그", icon: BookOpen, href: "/resources#brochure" },
+    { title: "영상 자료", description: "데모 영상", icon: Video, href: "/resources#videos" },
+    { title: "기술 자료", description: "스펙시트", icon: FileText, href: "/resources#downloads" },
   ],
 }
 
-// 재사용 가능한 메뉴 카드 컴포넌트
-interface MenuCardProps {
-  item: {
-    title: string
-    description: string
-    image: string
-    href: string
-  }
-  onClose?: () => void
+function MenuCardIconPanel({ Icon }: { Icon: LucideIcon }) {
+  return (
+    <div className="mb-2 w-full aspect-[4/3] rounded-lg border border-border/60 bg-muted/40 flex items-center justify-center group-hover:bg-muted/70 group-hover:border-border transition-colors">
+      <Icon
+        className="w-9 h-9 text-muted-foreground group-hover:text-primary transition-colors"
+        strokeWidth={1.35}
+        aria-hidden
+      />
+    </div>
+  )
 }
 
-const MenuCard = ({ item, onClose }: MenuCardProps) => (
-  <Link href={item.href} onClick={onClose}>
-    <NavigationMenuLink className="block group">
-      <div className="rounded-lg overflow-hidden mb-2">
-        <img
-          src={item.image}
-          alt={item.title}
-          className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-200"
-        />
-      </div>
-      <h4 className="font-semibold text-sm text-gray-900 group-hover:text-primary transition-colors">
-        {item.title}
-      </h4>
-      <p className="text-xs text-gray-500 line-clamp-1">{item.description}</p>
-    </NavigationMenuLink>
-  </Link>
-)
+function MenuCard({ item, onClose }: { item: MenuCardItem; onClose?: () => void }) {
+  return (
+    <Link href={item.href} onClick={onClose}>
+      <NavigationMenuLink className="block group">
+        {"icon" in item ? (
+          <MenuCardIconPanel Icon={item.icon} />
+        ) : (
+          <div className="rounded-lg overflow-hidden mb-2">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-200"
+            />
+          </div>
+        )}
+        <h4 className="font-semibold text-sm text-foreground group-hover:text-primary transition-colors">
+          {item.title}
+        </h4>
+        <p className="text-xs text-muted-foreground line-clamp-1 mt-0.5">{item.description}</p>
+      </NavigationMenuLink>
+    </Link>
+  )
+}
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)

@@ -1,9 +1,12 @@
 import { Link } from "wouter"
 import { ArrowRight, Plus, Scissors, Flame, Bot, Brain } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png"
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
+import plasmaGridImage from "@assets/Plasma1.JPG"
+import weldingGridImage from "@assets/용접사진2.png"
+import {
+  remoteAmrImage as amrImage,
+  remoteAiWeldingImage as aiImage,
+} from "@/lib/remoteImageUrls"
 
 const solutions = [
   {
@@ -11,14 +14,14 @@ const solutions = [
     description: "플라즈마/레이저 기반 형강 절단 토탈 시스템. 소재 투입부터 배출까지 완전 자동화를 실현합니다.",
     icon: Scissors,
     href: "/solutions/cutting",
-    image: cuttingImage,
+    image: plasmaGridImage,
   },
   {
     title: "용접",
     description: "협동 로봇과 정밀 제어 기술을 결합한 최적의 용접 솔루션. 복잡한 구조물도 균일한 품질로 자동 용접합니다.",
     icon: Flame,
     href: "/solutions/welding",
-    image: aiImage,
+    image: weldingGridImage,
   },
   {
     title: "AMR",

@@ -275,7 +275,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="font-medium">이메일</p>
-                <p className="text-muted-foreground">contact@robotics.co.kr</p>
+                <p className="text-muted-foreground">ys.kwon@neoarcrobotics.com</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -284,7 +284,7 @@ export default function ContactForm() {
               </div>
               <div>
                 <p className="font-medium">전화</p>
-                <p className="text-muted-foreground">02-1234-5678</p>
+                <p className="text-muted-foreground">053-213-2132</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -294,9 +294,9 @@ export default function ContactForm() {
               <div>
                 <p className="font-medium">주소</p>
                 <p className="text-muted-foreground">
-                  서울특별시 강남구 테헤란로 123
+                  대구광역시 북구 대학로 99-4(산격동)
                   <br />
-                  ROBOTICS 빌딩 5층
+                  창업놀이터 3층 305호
                 </p>
               </div>
             </div>

@@ -1,11 +1,14 @@
-import SolutionCard from "./SolutionCard";
-import { Cpu, Bot, Cog } from "lucide-react";
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png";
-
-const cuttingImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766044887/%ED%98%95%EA%B0%95%EC%A0%88%EB%8B%A8%EC%9E%A5%EB%B9%84%EC%82%AC%EC%A7%841_mvj532.jpg";
-const amrImage = "https://res.cloudinary.com/dzu2wygbi/image/upload/v1766024118/mainAMR.jpg";
+import SolutionCard from "./SolutionCard"
+import { Cpu, Bot, Cog } from "lucide-react"
+import plasmaGridImage from "@assets/Plasma1.JPG"
+import weldingGridImage from "@assets/용접사진2.png"
+import {
+  remoteAmrImage as amrImage,
+  remoteAiWeldingImage as aiImage,
+} from "@/lib/remoteImageUrls"
 
 // todo: remove mock functionality - replace with API data
+// 절단·용접 썸네일은 홈 SolutionGridSection과 동일
 const solutions = [
   {
     title: "절단",
@@ -18,7 +21,7 @@ const solutions = [
     ],
     icon: Cpu,
     href: "/solutions/cutting",
-    image: cuttingImage,
+    image: plasmaGridImage,
   },
   {
     title: "용접",
@@ -31,7 +34,7 @@ const solutions = [
     ],
     icon: Cog,
     href: "/solutions/welding",
-    image: aiImage,
+    image: weldingGridImage,
   },
   {
     title: "AMR",
@@ -59,7 +62,7 @@ const solutions = [
     href: "/solutions/ai-brain",
     image: aiImage,
   },
-];
+]
 
 export default function SolutionsGrid() {
   return (
@@ -80,5 +83,5 @@ export default function SolutionsGrid() {
         </div>
       </div>
     </section>
-  );
+  )
 }

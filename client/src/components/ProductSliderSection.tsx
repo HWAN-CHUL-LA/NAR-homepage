@@ -9,9 +9,15 @@ import { Button } from "@/components/ui/button"
 import "swiper/css"
 import "swiper/css/navigation"
 
-import amrImage from "@assets/generated_images/rugged_amr_industrial_transport.png"
-import aiImage from "@assets/generated_images/ai_robotic_welding_automation.png"
-import plasmaImage from "@assets/Plasma1.JPG"
+import {
+  remoteAmrImage as amrImage,
+  remoteAiWeldingImage as aiImage,
+  remotePlasmaProductImage as plasmaImage,
+} from "@/lib/remoteImageUrls"
+import pcrsStandardImg from "@assets/Products-Standard1.png"
+import pcrsExtendedImg from "@assets/Products- Extensions1.png"
+import weldingRobotImg from "@assets/Products- 용접로봇사진.png"
+import amrSliderImg from "@assets/AMR1.jpg"
 
 interface Product {
   name: string
@@ -22,6 +28,8 @@ interface Product {
   images: string[]
   videoUrl?: string
   isComingSoon?: boolean
+  /** 이미지 위 하얀 반투명 + 대각선 ‘개발 진행 중’ 표시 */
+  developmentOverlay?: boolean
 }
 
 const productGroups: Record<string, Product[]> = {
@@ -32,7 +40,7 @@ const productGroups: Record<string, Product[]> = {
       category: "형강절단 로봇",
       description: "표준형 형강 절단 로봇 시스템",
       specs: ["고정밀 플라즈마 절단", "표준 규격 형강 대응", "합리적인 도입 비용"],
-      images: [plasmaImage],
+      images: [pcrsStandardImg],
     },
     {
       name: "PCRS-Extended",
@@ -40,7 +48,7 @@ const productGroups: Record<string, Product[]> = {
       category: "형강절단 로봇",
       description: "확장형 형강 절단 로봇 시스템",
       specs: ["대형 형강 대응", "확장된 작업 영역", "고하중 자재 핸들링"],
-      images: [plasmaImage],
+      images: [pcrsExtendedImg],
     },
     {
       name: "LCRS - standard",
@@ -58,7 +66,7 @@ const productGroups: Record<string, Product[]> = {
       category: "수용접 로봇",
       description: "수용접 및 절단 기능을 결합한 협동 로봇 시스템",
       specs: ["협동 로봇 기반 안전 작업", "용접/절단 듀얼 모드", "간편한 티칭 인터페이스"],
-      images: [aiImage, amrImage],
+      images: [weldingRobotImg],
     },
   ],
   amr: [
@@ -68,7 +76,7 @@ const productGroups: Record<string, Product[]> = {
       category: "AMR",
       description: "산업 현장 실무에 최적화된 자율 주행 로봇",
       specs: ["전방향 Swerve Drive", "험지 대응 샤시", "정밀 자동 도킹"],
-      images: [amrImage, aiImage],
+      images: [amrSliderImg],
     },
   ],
   ai: [
@@ -79,6 +87,7 @@ const productGroups: Record<string, Product[]> = {
       description: "형강 절단 공정의 완전 무인화를 위한 AI 솔루션",
       specs: ["실시간 형상 보정 AI", "자율 경로 생성", "이상 감지 모니터링"],
       images: [aiImage, amrImage],
+      developmentOverlay: true,
     },
     {
       name: "고숙련자 행동모사 AI",
@@ -87,6 +96,7 @@ const productGroups: Record<string, Product[]> = {
       description: "숙련공의 작업 노하우를 학습하고 재현하는 AI",
       specs: ["멀티모달 데이터 학습", "정밀 동작 재현", "지속적 성능 최적화"],
       images: [aiImage, amrImage],
+      developmentOverlay: true,
     },
   ],
 }
@@ -221,11 +231,23 @@ export default function ProductSliderSection() {
                       {/* Image */}
                     <div className="lg:w-1/2 h-[280px] bg-gray-200 relative overflow-hidden">
                         {product.images && product.images.length > 0 ? (
-                          <img
-                            src={product.images[0]}
-                            alt={product.name}
-                            className="w-full h-full object-cover"
-                          />
+                          <>
+                            <img
+                              src={product.images[0]}
+                              alt={product.name}
+                              className="w-full h-full object-cover"
+                            />
+                            {product.developmentOverlay ? (
+                              <div
+                                className="absolute inset-0 flex items-center justify-center bg-white/80"
+                                aria-hidden
+                              >
+                                <span className="pointer-events-none select-none rounded-md border-2 border-neutral-700/40 bg-white/90 px-5 py-2.5 text-center text-lg font-bold tracking-wide text-neutral-900 shadow-sm sm:text-xl">
+                                  개발 진행 중
+                                </span>
+                              </div>
+                            ) : null}
+                          </>
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">이미지 준비중</div>
                         )}

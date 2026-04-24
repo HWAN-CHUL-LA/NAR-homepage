@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import SolutionPageHero from "@/components/SolutionPageHero";
 import FeatureGrid from "@/components/FeatureGrid";
 import CTASection from "@/components/CTASection";
-import { Cpu, Zap, Target, Repeat, Settings, Shield, BarChart } from "lucide-react";
+import { Cpu, Zap, Target, Repeat, Settings, Cuboid, BarChart } from "lucide-react";
 
 const cuttingVideo = "https://res.cloudinary.com/dzu2wygbi/video/upload/형강절단로봇_최종본_zd8na3.mov";
 
@@ -30,14 +30,14 @@ const features = [
     description: "두 가지 절단 에너지 옵션으로 현장에 맞는 구성 제안",
   },
   {
-    icon: Shield,
-    title: "안전 설계",
-    description: "무인 운영 환경에 맞춘 안전 인터락 시스템 적용",
+    icon: Cuboid,
+    title: "2D/3D 형상 대응",
+    description: "2D(Flat Bar)부터 3D(H-Beam·I-Beam·파이프·앵글·부등변앵글·쟌넬·사각관)까지 다양한 자재 형상을 절단합니다",
   },
   {
     icon: BarChart,
-    title: "운영 데이터",
-    description: "절단 품질/효율 데이터를 실시간으로 모니터링",
+    title: "맞춤 제작·기능 확장",
+    description: "절단 자재 크기에 맞춰 장비 사이즈(대형/중형/소형) 맞춤 제작이 가능하며, 다양한 형상 매크로 추가 기능 개발도 지원",
   },
 ];
 
@@ -48,12 +48,13 @@ export default function SmartCuttingPage() {
       <main>
         <SolutionPageHero
           title="플라즈마 / 레이저 형강 절단 토탈 시스템"
-          headline="소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation)를 구축."
-          subheadline="2D(Flat Bar)부터 3D(H-Beam·파이프·앵글·부등변앵글)형상 자재까지, 설계 도면 기준으로 원스톱 절단 자동화를 제공합니다. Laser / Plasma 두 가지 절단 에너지 옵션을 보유하고, 현장에 맞는 최적 구성을 제안합니다."
+          headline="소재 투입부터 배출까지, 형강 가공의 완전 자동화(Full Automation) 구축"
+          subheadline="2D(Flat Bar)부터 3D(H-Beam·I-Beam·파이프·앵글·부등변앵글·쟌넬·사각관)형상 자재까지, 설계 도면 기준으로 원스톱 절단 자동화를 제공합니다. Laser / Plasma 두 가지 절단 에너지 옵션을 보유하고, 현장에 맞는 최적 구성을 제안합니다."
           benefits={[
             "One-Stop 자동화: 인입 → 정렬/보정 → 절단 → 배출/잔재 처리까지 자동화 구축",
             "2D+3D 통합 대응: 다양한 형강 소재/형상에 대한 적용 범위 확장",
             "정밀 보정 기반 절단: 실 자재의 휨/비틀림 등을 센싱 기술로 감지하여 기준점을 보정",
+            "자재 크기 맞춤 제작 및 확장 기능: 절단 대상 자재 크기에 맞춰 장비 사이즈(대형/중형/소형) 맞춤 제작이 가능하며, 다양한 형상 매크로 추가 기능 개발도 지원",
             "현장 검증 레퍼런스: HD현대중공업, 한화오션 등 대기업 납품 및 운용 경험 기반",
           ]}
           video={cuttingVideo}

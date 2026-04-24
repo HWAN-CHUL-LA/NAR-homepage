@@ -1,8 +1,12 @@
-import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import CaseStudyCard from "./CaseStudyCard";
-import { ArrowRight } from "lucide-react";
-import cuttingImage from "@assets/generated_images/industrial_robotics_steel_cutting.png";
+import { Link } from "wouter"
+import { Button } from "@/components/ui/button"
+import CaseStudyCard from "./CaseStudyCard"
+import { ArrowRight } from "lucide-react"
+import {
+  caseHdHyundaiScrapClamping,
+  caseHanwhaPlasma50m,
+  caseSmeCustom,
+} from "@/lib/caseStudyCoverImages"
 
 // todo: remove mock functionality - replace with API data
 const caseStudies = [
@@ -14,7 +18,7 @@ const caseStudies = [
     solution: "Auxiliary Clamping",
     challenge: "인입 푸셔의 고정 한계 구간에서 소재 떨림 발생, 끝단부 가공 정밀도 저하",
     result: "잔재부 가공 오차 0.5mm 이내 달성, 자재 수율 극대화",
-    image: cuttingImage,
+    image: caseHdHyundaiScrapClamping,
   },
   {
     id: "hanwha-plasma-50m-install",
@@ -24,7 +28,7 @@ const caseStudies = [
     solution: "Mega-Scale Plasma",
     challenge: "초대형 선박 블록 생산을 위한 50m 장축 자재의 원스톱 가공 인프라 확보",
     result: "국내 최대 길이(50m) 가공 설비 구축 및 대형 자재 양산 체계 완성",
-    image: cuttingImage,
+    image: caseHanwhaPlasma50m,
   },
   {
     id: "sme-custom-solution",
@@ -34,9 +38,9 @@ const caseStudies = [
     solution: "Custom Cutting System",
     challenge: "기성품 장비의 높은 도입 장벽과 현장 맞춤형 기능 부재",
     result: "현장 요구사항 100% 반영, 비숙련자 운용 효율 극대화",
-    image: cuttingImage,
+    image: caseSmeCustom,
   },
-];
+]
 
 export default function CaseStudiesSection() {
   return (
