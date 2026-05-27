@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Link } from "wouter"
+import { Link, useLocation, useSearch } from "wouter"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
@@ -106,10 +105,26 @@ const categories = [
   { id: "welding", label: "수용접 로봇", icon: Cog },
   { id: "amr", label: "AMR", icon: Bot },
   { id: "ai", label: "AI", icon: Cog },
-]
+] as const
+
+type CategoryId = (typeof categories)[number]["id"]
+
+const validTabIds = new Set<CategoryId>(["cutting", "welding", "amr", "ai"])
+
+function tabFromSearch(searchString: string): CategoryId {
+  const raw = searchString.startsWith("?") ? searchString.slice(1) : searchString
+  const params = new URLSearchParams(raw)
+  const tab = params.get("tab")
+  if (tab && validTabIds.has(tab as CategoryId)) {
+    return tab as CategoryId
+  }
+  return "cutting"
+}
 
 export default function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState<"cutting" | "welding" | "amr" | "ai">("cutting")
+  const searchString = useSearch()
+  const [, setLocation] = useLocation()
+  const activeCategory = tabFromSearch(searchString)
   const currentInfo = categoryInfo[activeCategory]
   const currentProducts = productGroups[activeCategory]
 
@@ -131,7 +146,8 @@ export default function ProductsPage() {
                 {categories.map((cat) => (
                   <button
                     key={cat.id}
-                    onClick={() => setActiveCategory(cat.id as "cutting" | "amr" | "ai")}
+                    type="button"
+                    onClick={() => setLocation(`/products?tab=${cat.id}`)}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-all ${
                       activeCategory === cat.id
                         ? "bg-primary text-white"

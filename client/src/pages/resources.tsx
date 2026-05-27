@@ -59,7 +59,7 @@ const resources = {
         "비정형 바닥 환경에서의 전방향 주행과 자동 도킹 테스트 영상입니다.",
       type: "video" as const,
       duration: "2:30",
-      thumbnail: amrImage,
+      youtubeVideoId: "e1fGHpV3A_k",
     },
     {
       title: "현장 적용 사례 인터뷰",
